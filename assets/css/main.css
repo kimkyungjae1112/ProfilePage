@@ -3907,3 +3907,52 @@ input, select, textarea {
 			}
 
 		}
+
+
+/* GIF 갤러리 스타일 */
+.gif-gallery {
+    display: grid; /* Grid 레이아웃으로 변경 */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* 해상도에 맞춰 개수가 자동으로 조절되도록 설정 */
+    gap: 15px; /* 아이템 사이의 간격 */
+    padding: 20px 0; /* 갤러리 위아래 여백 */
+}
+
+/* 갤러리 안의 각 아이템 (figure 태그) */
+.gif-gallery figure {
+    /* 이 부분은 기존과 동일하게 유지됩니다. */
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.25em;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex; /* 내부 컨텐츠(이미지, 캡션) 정렬을 위해 추가 */
+    flex-direction: column; /* 내부 컨텐츠를 세로로 쌓음 */
+}
+
+/* 갤러리 안의 이미지 (img 태그) */
+.gif-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    flex-grow: 1; /* 이미지가 남는 공간을 채우도록 함 */
+    object-fit: cover; /* 이미지가 컨테이너에 꽉 차도록 설정 */
+}
+
+/* 갤러리 안의 캡션 (figcaption 태그) */
+.gif-gallery figcaption {
+    padding: 10px;
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: bold;
+    flex-shrink: 0; /* 캡션 크기는 줄어들지 않도록 고정 */
+}
+
+#no-face-gallery > .content {
+    width: 100%;
+}
+
+#zerosector-gallery > .content {
+    width: 100%;
+}
