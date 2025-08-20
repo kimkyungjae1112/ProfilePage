@@ -4047,3 +4047,50 @@ input, select, textarea {
 .split.align-top {
     align-items: flex-start;
 }
+
+/* 소개(Intro) 섹션 프로필 이미지의 최대 크기 제한 */
+#intro .image.fit {
+    max-width: 350px;  /* 최대 너비 */
+    max-height: 450px; /* 최대 높이 추가 */
+    margin: 0 auto;    /* 가운데 정렬 */
+}
+
+/* 이미지가 부모 영역에 맞춰지도록 설정 (왜곡 방지) */
+#intro .image.fit img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 높이가 조절된 GIF 스타일 */
+.fixed-height-gif {
+    width: 100%; /* 너비를 100%보다 작게 설정 */
+    margin-top: 2em;
+    margin-left: auto; /* 왼쪽 여백을 자동으로 계산 */
+    margin-right: auto; /* 오른쪽 여백을 자동으로 계산 */
+    display: block; /* 블록 요소로 확실히 지정 */
+}
+
+.fixed-height-gif img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 높이가 조절된 GIF 스타일 */
+.fixed-height-gif {
+    width: 95%;
+	font-size: 0.8em;
+	font-family: 'Noto Sans KR', sans-serif;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center; /* 내부 텍스트(캡션) 가운데 정렬 추가 */
+}
+
+/* 연락처 정보와 버튼 사이 간격 추가 */
+.contact-info .actions {
+    margin-top: 1em; /* 버튼 목록 위에 2em만큼의 여백을 추가 */
+}
