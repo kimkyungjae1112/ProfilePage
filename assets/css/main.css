@@ -4094,3 +4094,8 @@ input, select, textarea {
 .contact-info .actions {
     margin-top: 1em; /* 버튼 목록 위에 2em만큼의 여백을 추가 */
 }
+
+/* 연락처 정보 텍스트 줄 바꿈 방지 */
+.contact-info {
+    white-space: nowrap;
+}
