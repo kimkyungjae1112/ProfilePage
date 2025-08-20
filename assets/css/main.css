@@ -3957,6 +3957,11 @@ input, select, textarea {
     width: 100%;
 }
 
+#blackspace-gallery > .content {
+    width: 100%;
+}
+
+
 /* ------------------------------------ */
 /* ▼▼▼ 모든 섹션의 버튼 공통 스타일 ▼▼▼ */
 /* ------------------------------------ */
@@ -4036,4 +4041,9 @@ input, select, textarea {
     max-width: 100%; /* 너비 제한 해제 */
     padding-left: 5%;  /* 화면 왼쪽 가장자리와의 여백 */
     padding-right: 5%; /* 화면 오른쪽 가장자리와의 여백 */
+}
+
+/* 위쪽 정렬: 양쪽 열이 서로의 높이에 영향을 주지 않고 독립적인 높이를 갖게 함 */
+.split.align-top {
+    align-items: flex-start;
 }
