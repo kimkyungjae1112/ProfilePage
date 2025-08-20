@@ -4073,7 +4073,7 @@ input, select, textarea {
 
 .fixed-height-gif img {
     width: 100%;
-    height: 380px;
+    height: 350px;
     object-fit: cover;
     display: block;
 }
