@@ -4063,6 +4063,7 @@ input, select, textarea {
 }
 
 /* 높이가 조절된 GIF 스타일 */
+/*
 .fixed-height-gif {
     width: 100%; /* 너비를 100%보다 작게 설정 */
     margin-top: 2em;
@@ -4077,6 +4078,25 @@ input, select, textarea {
     height: 500px;
     object-fit: cover;
     display: block;
+}*/
+
+/* 높이가 조절된 GIF/동영상 스타일 */
+.fixed-height-gif {
+    width: 100%; /* 너비를 100%로 설정하여 반응형 기반을 만듦 */
+    max-width: 700px; /* 동영상의 최대 너비를 700px로 제한 */
+    margin: 2em auto 0; /* 상단 여백 및 가운데 정렬 */
+    display: block;
+    text-align: center;
+}
+
+.fixed-height-gif img,
+.fixed-height-gif video {
+    width: 100%;
+    height: auto; /* height를 auto로 변경하여 비율에 맞게 조절되도록 함 */
+    aspect-ratio: 16 / 9; /* 동영상의 가로:세로 비율 (예: 16:9) */
+    object-fit: cover;
+    display: block;
+    border-radius: 5px; /* 약간의 둥근 모서리 추가 */
 }
 
 /* 높이가 조절된 GIF 스타일 */
