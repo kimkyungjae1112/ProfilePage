@@ -4022,13 +4022,6 @@ input, select, textarea {
     padding-right: 5%; /* 화면 오른쪽 가장자리와의 여백 */
 }
 
-#one > .inner {
-    width: 100%;
-    max-width: 100%; /* 너비 제한 해제 */
-    padding-left: 5%;  /* 화면 왼쪽 가장자리와의 여백 */
-    padding-right: 5%; /* 화면 오른쪽 가장자리와의 여백 */
-}
-
 /* 'What I do' 섹션을 전체 너비로 확장 */
 #two > .inner {
     width: 100%;
@@ -4135,12 +4128,12 @@ input, select, textarea {
 /* 미리보기 갤러리 (가운데 정렬) */
 .preview-gallery {
     display: grid;
-    width: 100%; /* 너비를 100%로 설정 */
+	width: 90%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1em;
     margin-bottom: 2.5em;
     
-    max-width: 1400px;
+    max-width: 1400px; /* 갤러리 최대 너비 설정 */
     margin-left: auto;
     margin-right: auto;
 }
@@ -4170,13 +4163,13 @@ input, select, textarea {
 
 /* 프로젝트 요약 정보 (가운데 정렬) */
 .project-summary {
-   	width: 100%; /* 너비를 100%로 설정 */
+    width: 90%;
     text-align: left;
     background-color: #2a2f4c;
     padding: 2.5em;
     border-radius: 8px;
     
-    max-width: 1400px;
+    max-width: 1400px; /* 갤러리와 동일한 최대 너비 설정 */
     margin-left: auto;
     margin-right: auto;
 }
