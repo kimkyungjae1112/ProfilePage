@@ -4251,3 +4251,39 @@ input, select, textarea {
     color: #9a9a9a;
 }
 
+/* 갓 세이브 버밍엄 - 단일 이미지 전용 스타일 */
+.preview-gallery.jpg-mode.single-image {
+    display: block; /* 1개일 때는 그리드보다 블록 레이아웃이 안정적입니다 */
+    width: 100%;
+    max-width: 1600px; /* Black Space의 요약 박스와 너비를 맞춤 */
+    margin: 0 auto 2.5em; /* 중앙 정렬 및 아래 간격 */
+}
+
+.preview-gallery.jpg-mode.single-image figure {
+    margin: 0;
+    border-radius: 0.5em;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.preview-gallery.jpg-mode.single-image img {
+    width: 100%;
+    /* ★ 단일 이미지일 때 가장 예쁜 와이드 비율 (21:9) */
+    aspect-ratio: 21 / 9 !important; 
+    
+    /* 화면이 너무 커서 이미지가 세로로 너무 길어지는 걸 방지 */
+    max-height: 500px; 
+    
+    object-fit: cover !important; /* 비율 유지하며 꽉 채우기 */
+    display: block;
+    image-rendering: -webkit-optimize-contrast; /* 선명도 보정 */
+}
+
+.preview-gallery.jpg-mode.single-image figcaption {
+    padding: 1em;
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
