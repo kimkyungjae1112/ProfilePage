@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="370" viewBox="0 0 520 370" role="img" aria-labelledby="title desc">
     <title id="title">스폿의 접근 경계와 이동·워핑 거리</title>
-    <desc id="desc">스폿에서 90cm 떨어진 보라색 워핑 목표, 150cm 떨어진 초록색 이동 목적지 후보 A, 210cm의 파란색 기본 접근 경계. 경계 안의 가까운 캐릭터는 PreMove를 생략하고, 밖의 먼 캐릭터는 PreMove로 접근합니다.</desc>
+    <desc id="desc">스폿에서 90cm 떨어진 보라색 워핑 목표, 150cm 떨어진 초록색 이동 목적지 후보 A, 210cm의 파란색 기본 접근 경계. 경계 안의 가까운 캐릭터는 자동 접근을 생략하고, 밖의 먼 캐릭터는 자동으로 접근합니다.</desc>
     <rect width="520" height="370" rx="5" fill="#251d35"/>
     <g font-family="Segoe UI, Malgun Gothic, sans-serif">
         <circle cx="225" cy="185" r="147" fill="#80a8ff" fill-opacity=".045" stroke="#80a8ff" stroke-width="2"/>
@@ -13,14 +13,14 @@
         <circle cx="330" cy="185" r="7" fill="#68d3b0"/>
         <circle cx="445" cy="185" r="9" fill="#efb26b"/>
         <circle cx="141" cy="280" r="9" fill="#68d3b0"/>
-        <text x="211" y="209" fill="#dbc6ff" font-size="13">Spot</text>
+        <text x="211" y="209" fill="#dbc6ff" font-size="13">지점</text>
         <text x="288" y="218" fill="#bc93ff" font-size="12" text-anchor="middle">90</text>
         <text x="330" y="218" fill="#68d3b0" font-size="12" text-anchor="middle">A · 150</text>
         <path d="M225 38V24" stroke="#80a8ff" stroke-width="1.5"/>
         <text x="225" y="17" fill="#80a8ff" font-size="12" text-anchor="middle">기본 접근 경계 · 210</text>
         <text x="445" y="145" fill="#efb26b" font-size="12" text-anchor="middle">캐릭터 (멀리)</text>
-        <text x="445" y="163" fill="#efb26b" font-size="11" text-anchor="middle">PreMove 실행</text>
+        <text x="445" y="163" fill="#efb26b" font-size="11" text-anchor="middle">자동 접근</text>
         <text x="141" y="314" fill="#68d3b0" font-size="12" text-anchor="middle">캐릭터 (가까이)</text>
-        <text x="141" y="333" fill="#68d3b0" font-size="11" text-anchor="middle">PreMove 생략</text>
+        <text x="141" y="333" fill="#68d3b0" font-size="11" text-anchor="middle">접근 생략</text>
     </g>
 </svg>

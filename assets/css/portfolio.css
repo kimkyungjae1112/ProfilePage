@@ -155,18 +155,6 @@ li::marker
     font-size: 19px;
     font-weight: 700;
 }
-.brand-mark
-{
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--accent);
-    border-radius: 12px 12px 12px 0;
-    color: var(--accent);
-    font-size: 26px;
-    font-weight: 800;
-}
 .brand small
 {
     display: block;
@@ -939,6 +927,21 @@ summary small
     margin-top: 24px;
     font-size: 17px;
 }
+.journal-feature-section
+{
+    margin-top: 40px;
+}
+.journal-save-heading
+{
+    margin-top: 50px;
+    padding-top: 35px;
+    border-top: 1px solid var(--border);
+}
+.journal-save-intro
+{
+    margin-top: 14px;
+    font-size: 13px;
+}
 .journal-overview
 {
     display: grid;
@@ -1442,14 +1445,11 @@ body.media-open
         flex-shrink: 0;
         margin-right: 26px;
     }
-    .brand-mark
+    .brand
     {
-        width: 32px;
-        height: 32px;
-        font-size: 20px;
-        border-radius: 8px 8px 8px 0;
+        font-size: 15px;
     }
-    .brand > span:last-child
+    .brand small
     {
         display: none;
     }
