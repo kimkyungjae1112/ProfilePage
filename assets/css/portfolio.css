@@ -1,3 +1,11 @@
+@font-face
+{
+    font-family: "Pretendard Variable";
+    font-style: normal;
+    font-weight: 45 920;
+    font-display: swap;
+    src: url("../fonts/PretendardVariable.woff2") format("woff2");
+}
 :root
 {
     --rail: 238px;
@@ -22,8 +30,8 @@ body
     margin: 0;
     background: var(--background);
     color: var(--ink);
-    font-family: "Pretendard", "Segoe UI", "Malgun Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 15px;
+    font-family: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 17px;
     line-height: 1.85;
     word-break: keep-all;
     overflow-wrap: anywhere;
@@ -65,22 +73,22 @@ h1, h2, h3, h4
 }
 h1
 {
-    font-size: clamp(30px, 3.05vw, 49px);
+    font-size: calc(clamp(30px, 3.05vw, 49px) + 2px);
     letter-spacing: -0.055em;
 }
 h2
 {
-    font-size: clamp(25px, 2.2vw, 36px);
+    font-size: calc(clamp(25px, 2.2vw, 36px) + 2px);
     letter-spacing: -0.045em;
 }
 h3
 {
-    font-size: 19px;
+    font-size: 21px;
     letter-spacing: -0.025em;
 }
 h4
 {
-    font-size: 16px;
+    font-size: 18px;
 }
 p
 {
@@ -152,14 +160,14 @@ li::marker
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 700;
 }
 .brand small
 {
     display: block;
     color: var(--subtle);
-    font-size: 8px;
+    font-size: 10px;
     letter-spacing: 0.09em;
 }
 .sidebar nav
@@ -176,7 +184,7 @@ li::marker
     padding: 12px 0 14px;
     border-bottom: 1px solid var(--border);
     color: #c2b6d3;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.13em;
     transition: color 180ms;
@@ -204,7 +212,7 @@ li::marker
 {
     margin-right: 12px;
     color: var(--subtle);
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0;
 }
 .sidebar nav a small
@@ -212,14 +220,14 @@ li::marker
     display: block;
     margin: 3px 0 0 26px;
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 400;
     letter-spacing: 0;
 }
 .sidebar-bottom
 {
     color: var(--subtle);
-    font-size: 10px;
+    font-size: 12px;
 }
 .sidebar-bottom a
 {
@@ -259,7 +267,7 @@ main
     gap: 10px;
     margin-bottom: 30px;
     color: var(--accent);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 650;
     letter-spacing: 0.19em;
 }
@@ -303,7 +311,7 @@ main
 {
     margin-top: 18px;
     color: #e6d7f6;
-    font-size: 15px;
+    font-size: 17px;
 }
 h1 span
 {
@@ -313,32 +321,32 @@ h1 span
 {
     margin-top: 23px;
     color: #fff;
-    font-size: 21px;
+    font-size: 23px;
     font-weight: 650;
 }
 .intro-name span
 {
     margin-left: 10px;
     color: var(--subtle);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.05em;
 }
 .lead
 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.75;
     color: #e8e1f1;
 }
 .intro-copy .lead
 {
     margin: 18px 0 16px;
-    font-size: 17px;
+    font-size: 19px;
 }
 .intro-copy > p:last-of-type
 {
     max-width: 620px;
-    font-size: 14px;
+    font-size: 16px;
 }
 .portrait
 {
@@ -372,7 +380,7 @@ h1 span
     border-radius: 24px;
     background: transparent;
     color: #f3edf8;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 650;
     transition: background 180ms, border-color 180ms;
 }
@@ -404,12 +412,12 @@ h1 span
 dt
 {
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
 }
 .intro-facts dd
 {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 dd small
@@ -417,7 +425,7 @@ dd small
     display: block;
     margin-top: 4px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 400;
 }
 .intro-footer
@@ -427,12 +435,12 @@ dd small
     align-items: center;
     gap: 24px;
     margin-top: 22px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .text-link
 {
     color: #e9b8db;
-    font-size: 12px;
+    font-size: 14px;
     white-space: nowrap;
 }
 .text-link:hover
@@ -459,14 +467,14 @@ dd small
 .section-heading > p
 {
     margin-top: 16px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .proficiency-table
 {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 13px;
+    font-size: 15px;
 }
 .proficiency-table th, .proficiency-table td
 {
@@ -479,7 +487,7 @@ dd small
     padding-top: 0;
     padding-bottom: 13px;
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
 }
 .proficiency-table th:first-child
@@ -493,19 +501,19 @@ dd small
 }
 .proficiency-table tbody th
 {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 650;
 }
 .proficiency-table td strong
 {
     display: block;
-    font-size: 13px;
+    font-size: 15px;
 }
 .proficiency-table td p
 {
     margin-top: 8px;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 14px;
 }
 .skill-tools
 {
@@ -514,7 +522,7 @@ dd small
 .skill-tools > h3
 {
     margin-bottom: 18px;
-    font-size: 16px;
+    font-size: 18px;
 }
 .skill-tool-grid
 {
@@ -529,13 +537,13 @@ dd small
 }
 .skill-tool-grid h4
 {
-    font-size: 13px;
+    font-size: 15px;
 }
 .skill-tool-grid ul
 {
     margin: 10px 0 0;
     padding-left: 17px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .skill-tool-grid li + li
 {
@@ -565,16 +573,16 @@ dd small
 .skill-list h3
 {
     padding-top: 2px;
-    font-size: 14px;
+    font-size: 16px;
 }
 .skill-list strong
 {
-    font-size: 14px;
+    font-size: 16px;
 }
 .skill-list p
 {
     margin-top: 7px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .case-link
 {
@@ -583,7 +591,7 @@ dd small
     border: 1px solid var(--border);
     border-radius: 4px;
     color: #e8c5e3;
-    font-size: 11px;
+    font-size: 13px;
     white-space: nowrap;
 }
 .case-link:hover
@@ -596,19 +604,19 @@ dd small
 }
 .tool-strip > span
 {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--accent);
 }
 .tool-strip p
 {
     margin: 8px 0 3px;
     color: var(--ink);
-    font-size: 14px;
+    font-size: 16px;
 }
 .tool-strip small
 {
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
 }
 .experience
 {
@@ -629,17 +637,17 @@ dd small
     border: 1px solid rgba(232, 166, 206, 0.3);
     border-radius: 3px;
     color: #e6b5d8;
-    font-size: 10px;
+    font-size: 12px;
 }
 .project-hero h2
 {
-    font-size: 36px;
+    font-size: 38px;
 }
 .english-title
 {
     margin-top: 6px;
     color: var(--subtle);
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.04em;
 }
 .project-hero .lead
@@ -648,7 +656,7 @@ dd small
 }
 .project-hero > div > p:last-child
 {
-    font-size: 13px;
+    font-size: 15px;
 }
 .project-cover
 {
@@ -666,7 +674,7 @@ figcaption
 {
     margin-top: 9px;
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
 }
 .project-meta
 {
@@ -681,7 +689,7 @@ figcaption
 .project-meta dd
 {
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.75;
 }
 .focus-grid
@@ -699,16 +707,16 @@ figcaption
 .focus-grid article > span
 {
     color: var(--accent);
-    font-size: 10px;
+    font-size: 12px;
 }
 .focus-grid h3
 {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 18px;
 }
 .focus-grid p
 {
-    font-size: 12px;
+    font-size: 14px;
 }
 .detail-heading
 {
@@ -726,7 +734,7 @@ figcaption
     border-radius: 3px;
     background: transparent;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 13px;
     white-space: nowrap;
 }
 .text-button:hover
@@ -749,7 +757,7 @@ summary
     gap: 16px;
     padding: 21px 0;
     list-style: none;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -762,7 +770,7 @@ summary::after
     content: "+";
     margin-left: auto;
     color: var(--accent);
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 300;
 }
 details[open] > summary::after
@@ -782,7 +790,7 @@ summary small
     display: block;
     margin-top: 5px;
     color: var(--subtle);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 400;
 }
 .detail-number
@@ -790,13 +798,13 @@ summary small
     flex-shrink: 0;
     min-width: 16px;
     color: var(--subtle);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 400;
 }
 .detail-body
 {
     padding: 0 36px 28px 30px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .detail-body p + p
 {
@@ -806,7 +814,7 @@ summary small
 {
     margin: 16px 0 9px;
     color: #e6bddb;
-    font-size: 12px;
+    font-size: 14px;
 }
 .detail-body .text-link
 {
@@ -839,7 +847,7 @@ summary small
     left: -13px;
     transform: translateY(-50%);
     color: var(--accent);
-    font-size: 11px;
+    font-size: 13px;
 }
 .game-flow-steps span, .game-flow-steps strong, .game-flow-steps small
 {
@@ -849,22 +857,22 @@ summary small
 {
     margin-bottom: 7px;
     color: var(--accent);
-    font-size: 9px;
+    font-size: 11px;
 }
 .game-flow-steps strong
 {
-    font-size: 12px;
+    font-size: 14px;
 }
 .game-flow-steps small
 {
     margin-top: 4px;
     color: var(--subtle);
-    font-size: 10px;
+    font-size: 12px;
 }
 .technical-references
 {
     margin-top: 20px;
-    font-size: 10px;
+    font-size: 12px;
 }
 .technical-references a
 {
@@ -886,13 +894,13 @@ summary small
 }
 .interaction-visual figcaption strong
 {
-    font-size: 13px;
+    font-size: 15px;
 }
 .interaction-visual figcaption small
 {
     display: block;
     margin-top: 5px;
-    font-size: 10px;
+    font-size: 12px;
 }
 .interaction-visual-layout
 {
@@ -916,7 +924,7 @@ summary small
     margin-top: 8px;
     color: var(--accent);
     text-align: right;
-    font-size: 11px;
+    font-size: 13px;
 }
 .diagram-link:hover > span
 {
@@ -935,7 +943,7 @@ summary small
 .distance-legend dt
 {
     color: inherit;
-    font-size: 11px;
+    font-size: 13px;
     overflow-wrap: anywhere;
 }
 .distance-legend dd strong
@@ -943,12 +951,12 @@ summary small
     display: block;
     margin-top: 4px;
     color: inherit;
-    font-size: 17px;
+    font-size: 19px;
 }
 .distance-legend dd span
 {
     color: var(--muted);
-    font-size: 10px;
+    font-size: 12px;
 }
 .distance-warp
 {
@@ -968,7 +976,7 @@ summary small
     padding-top: 15px;
     border-top: 1px solid var(--border);
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
 }
 .premove-sequence
 {
@@ -978,7 +986,7 @@ summary small
 .premove-sequence li::marker
 {
     color: var(--accent);
-    font-size: 11px;
+    font-size: 13px;
 }
 .premove-sequence p
 {
@@ -990,7 +998,7 @@ summary small
     padding: 16px 18px;
     border-left: 2px solid #68d3b0;
     background: rgba(104, 211, 176, 0.04);
-    font-size: 12px;
+    font-size: 14px;
 }
 .interaction-debug p
 {
@@ -1007,13 +1015,13 @@ summary small
 }
 .journal h2
 {
-    font-size: clamp(27px, 2.6vw, 41px);
+    font-size: calc(clamp(27px, 2.6vw, 41px) + 2px);
 }
 .journal-lead
 {
     max-width: 820px;
     margin-top: 24px;
-    font-size: 17px;
+    font-size: 19px;
 }
 .journal-feature-section
 {
@@ -1028,7 +1036,7 @@ summary small
 .journal-save-intro
 {
     margin-top: 14px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .journal-overview
 {
@@ -1040,18 +1048,18 @@ summary small
 .micro-label
 {
     color: var(--accent);
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 650;
     letter-spacing: 0.14em;
 }
 .journal-overview h3
 {
     margin: 9px 0;
-    font-size: 16px;
+    font-size: 18px;
 }
 .journal-overview p
 {
-    font-size: 13px;
+    font-size: 15px;
 }
 .flow-figure
 {
@@ -1068,12 +1076,12 @@ summary small
     gap: 16px;
     margin: 0 0 25px;
     color: var(--ink);
-    font-size: 13px;
+    font-size: 15px;
 }
 .flow-figure figcaption small
 {
     color: var(--subtle);
-    font-size: 10px;
+    font-size: 12px;
 }
 .save-paths
 {
@@ -1095,18 +1103,18 @@ summary small
 .save-paths strong
 {
     margin-top: 8px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .save-paths small
 {
     margin-top: 4px;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--subtle);
 }
 .flow-label
 {
     color: var(--accent);
-    font-size: 9px;
+    font-size: 11px;
     letter-spacing: 0.1em;
 }
 .flow-arrow
@@ -1114,7 +1122,7 @@ summary small
     display: block;
     margin: 8px 0;
     color: var(--accent);
-    font-size: 21px;
+    font-size: 23px;
 }
 .save-file
 {
@@ -1123,13 +1131,13 @@ summary small
     border: 1px solid rgba(232, 166, 206, 0.35);
     background: rgba(232, 166, 206, 0.08);
     color: #eac9e2;
-    font-size: 13px;
+    font-size: 15px;
     text-align: center;
 }
 .save-file span
 {
     margin-left: 16px;
-    font-size: 11px;
+    font-size: 13px;
 }
 .restore-flow
 {
@@ -1139,7 +1147,7 @@ summary small
     flex-wrap: wrap;
     gap: 13px;
     padding-top: 24px;
-    font-size: 11px;
+    font-size: 13px;
     color: var(--muted);
 }
 .restore-flow b
@@ -1152,7 +1160,7 @@ summary small
     padding: 16px 18px;
     border-left: 2px solid var(--accent);
     background: rgba(255, 255, 255, 0.035);
-    font-size: 12px;
+    font-size: 14px;
 }
 .scope-note p
 {
@@ -1171,7 +1179,7 @@ summary small
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
 }
 .tech-table th, .tech-table td
 {
@@ -1183,7 +1191,7 @@ summary small
 {
     background: rgba(255, 255, 255, 0.06);
     color: #e5bed9;
-    font-size: 11px;
+    font-size: 13px;
 }
 .tech-table tbody th
 {
@@ -1204,7 +1212,7 @@ summary small
 .case-summary p
 {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
     color: #e4d8e9;
 }
 .projects
@@ -1226,18 +1234,18 @@ summary small
 }
 .student-heading h3
 {
-    font-size: 32px;
+    font-size: 34px;
     letter-spacing: -0.025em;
 }
 .student-heading p
 {
     margin-top: 12px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .project-index
 {
     color: rgba(226, 201, 249, 0.12);
-    font-size: 63px;
+    font-size: 65px;
     font-weight: 300;
     line-height: 1.1;
 }
@@ -1248,7 +1256,7 @@ summary small
     gap: 10px 18px;
     margin: 18px 0 25px;
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
 }
 .project-tags span + span
 {
@@ -1296,17 +1304,17 @@ summary small
     border-radius: 50%;
     background: rgba(26, 16, 34, 0.85);
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
 }
 .project-description
 {
     margin-top: 27px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .responsibility
 {
     margin-top: 12px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .project-reflection
 {
@@ -1317,13 +1325,13 @@ summary small
 }
 .project-reflection summary
 {
-    font-size: 12px;
+    font-size: 14px;
     padding: 13px 0;
 }
 .project-reflection .detail-body
 {
     padding: 0 16px 20px 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 .activities
 {
@@ -1338,7 +1346,7 @@ summary small
 }
 .background-grid h3
 {
-    font-size: 15px;
+    font-size: 17px;
     padding-bottom: 17px;
     border-bottom: 1px solid var(--border);
 }
@@ -1349,7 +1357,7 @@ summary small
 .timeline dd
 {
     margin-top: 7px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .contact
 {
@@ -1359,7 +1367,7 @@ summary small
 .contact > .inner > p:not(.eyebrow)
 {
     margin-top: 20px;
-    font-size: 13px;
+    font-size: 15px;
 }
 .contact-row
 {
@@ -1371,7 +1379,7 @@ summary small
 }
 .contact-row > a
 {
-    font-size: clamp(18px, 2vw, 28px);
+    font-size: calc(clamp(18px, 2vw, 28px) + 2px);
     letter-spacing: -0.02em;
 }
 .contact-row > a span
@@ -1383,7 +1391,7 @@ summary small
 {
     min-height: 24px;
     color: var(--accent);
-    font-size: 11px;
+    font-size: 13px;
     margin-top: 8px;
 }
 footer
@@ -1394,7 +1402,7 @@ footer
     padding-top: 23px;
     border-top: 1px solid var(--border);
     color: var(--subtle);
-    font-size: 11px;
+    font-size: 13px;
 }
 dialog
 {
@@ -1422,7 +1430,7 @@ dialog::backdrop
 }
 .dialog-heading h2
 {
-    font-size: 16px;
+    font-size: 18px;
 }
 .dialog-heading button
 {
@@ -1431,7 +1439,7 @@ dialog::backdrop
     border: 1px solid var(--border);
     border-radius: 4px;
     background: transparent;
-    font-size: 12px;
+    font-size: 14px;
 }
 .dialog-media
 {
@@ -1447,7 +1455,7 @@ dialog::backdrop
 dialog > p
 {
     margin-top: 12px;
-    font-size: 11px;
+    font-size: 13px;
 }
 body.media-open
 {
@@ -1483,7 +1491,7 @@ body.media-open
     }
     h1
     {
-        font-size: 34px;
+        font-size: 36px;
     }
     .skill-list article
     {
@@ -1501,7 +1509,7 @@ body.media-open
     }
     .project-hero h2
     {
-        font-size: 29px;
+        font-size: 31px;
     }
     .focus-grid
     {
@@ -1535,7 +1543,7 @@ body.media-open
     }
     .brand
     {
-        font-size: 15px;
+        font-size: 17px;
     }
     .brand small
     {
@@ -1564,7 +1572,7 @@ body.media-open
         flex-shrink: 0;
         padding: 0;
         border: 0;
-        font-size: 9px;
+        font-size: 11px;
         white-space: nowrap;
     }
     .sidebar nav a > span, .sidebar nav a small, .sidebar-bottom
@@ -1594,7 +1602,7 @@ body.media-open
 {
     body
     {
-        font-size: 14px;
+        font-size: 16px;
     }
     .sidebar
     {
@@ -1625,7 +1633,7 @@ body.media-open
     }
     .eyebrow
     {
-        font-size: 8px;
+        font-size: 10px;
         margin-bottom: 24px;
     }
     .intro-layout
@@ -1635,11 +1643,11 @@ body.media-open
     }
     h1
     {
-        font-size: clamp(23px, 7vw, 36px);
+        font-size: calc(clamp(23px, 7vw, 36px) + 2px);
     }
     .role
     {
-        font-size: 12px;
+        font-size: 14px;
         margin-top: 16px;
     }
     .intro-name
@@ -1648,7 +1656,7 @@ body.media-open
     }
     .intro-copy .lead
     {
-        font-size: 16px;
+        font-size: 18px;
     }
     .portrait
     {
@@ -1672,7 +1680,7 @@ body.media-open
         padding: 10px 15px;
         min-height: 43px;
         gap: 14px;
-        font-size: 10px;
+        font-size: 12px;
     }
     .intro-facts
     {
@@ -1690,7 +1698,7 @@ body.media-open
     .intro-facts dd
     {
         margin: 0;
-        font-size: 13px;
+        font-size: 15px;
     }
     .intro-footer
     {
@@ -1707,7 +1715,7 @@ body.media-open
     }
     .section-heading > p
     {
-        font-size: 12px;
+        font-size: 14px;
     }
     .proficiency-table, .proficiency-table tbody
     {
@@ -1745,7 +1753,7 @@ body.media-open
     .proficiency-table tbody th
     {
         color: var(--accent);
-        font-size: 13px;
+        font-size: 15px;
     }
     .proficiency-table tbody td
     {
@@ -1764,7 +1772,7 @@ body.media-open
     .skill-list h3
     {
         color: var(--accent);
-        font-size: 12px;
+        font-size: 14px;
     }
     .case-link
     {
@@ -1777,7 +1785,7 @@ body.media-open
     }
     .project-hero .lead
     {
-        font-size: 17px;
+        font-size: 19px;
     }
     .project-meta
     {
@@ -1796,18 +1804,18 @@ body.media-open
     }
     summary
     {
-        font-size: 13px;
+        font-size: 15px;
         gap: 10px;
     }
     summary small
     {
-        font-size: 9px;
+        font-size: 11px;
     }
     .detail-body
     {
         padding-left: 0;
         padding-right: 0;
-        font-size: 12px;
+        font-size: 14px;
     }
     .game-flow-steps
     {
@@ -1832,24 +1840,24 @@ body.media-open
     }
     .distance-legend dt
     {
-        font-size: 12px;
+        font-size: 14px;
     }
     .distance-legend dd span
     {
-        font-size: 11px;
+        font-size: 13px;
     }
     .interaction-debug
     {
         padding: 14px;
-        font-size: 11px;
+        font-size: 13px;
     }
     .journal h2
     {
-        font-size: 27px;
+        font-size: 29px;
     }
     .journal-lead
     {
-        font-size: 15px;
+        font-size: 17px;
     }
     .journal-overview
     {
@@ -1880,26 +1888,26 @@ body.media-open
     }
     .save-paths strong
     {
-        font-size: 11px;
+        font-size: 13px;
     }
     .save-paths small
     {
-        font-size: 9px;
+        font-size: 11px;
     }
     .save-file
     {
-        font-size: 11px;
+        font-size: 13px;
     }
     .save-file span
     {
         display: block;
         margin: 0;
-        font-size: 10px;
+        font-size: 12px;
     }
     .restore-flow
     {
         gap: 7px;
-        font-size: 10px;
+        font-size: 12px;
     }
     .restore-flow strong
     {
@@ -1908,7 +1916,7 @@ body.media-open
     }
     .tech-table
     {
-        font-size: 10px;
+        font-size: 12px;
     }
     .tech-table th, .tech-table td
     {
@@ -1924,7 +1932,7 @@ body.media-open
     }
     .case-summary p
     {
-        font-size: 12px;
+        font-size: 14px;
     }
     .student-project
     {
@@ -1933,15 +1941,15 @@ body.media-open
     }
     .student-heading h3
     {
-        font-size: 29px;
+        font-size: 31px;
     }
     .project-index
     {
-        font-size: 46px;
+        font-size: 48px;
     }
     .project-tags
     {
-        font-size: 10px;
+        font-size: 12px;
         gap: 8px 12px;
     }
     .project-tags span + span
@@ -1955,7 +1963,7 @@ body.media-open
     }
     .project-description h4
     {
-        font-size: 15px;
+        font-size: 17px;
     }
     .background-grid
     {
@@ -1972,7 +1980,7 @@ body.media-open
     }
     .dialog-heading h2
     {
-        font-size: 13px;
+        font-size: 15px;
     }
 }
 @media (prefers-reduced-motion: reduce)
