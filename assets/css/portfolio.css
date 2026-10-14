@@ -313,9 +313,9 @@ main
 }
 .role
 {
-    margin-bottom: 18px;
+    margin-top: 18px;
     color: #e6d7f6;
-    font-size: 13px;
+    font-size: 15px;
 }
 h1 span
 {
@@ -364,22 +364,6 @@ h1 span
     border-radius: 4px;
     background: #fff;
     box-shadow: 16px 16px 0 rgba(214, 174, 237, 0.06);
-}
-.portrait figcaption
-{
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    margin-top: 23px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-    font-size: 11px;
-}
-.portrait figcaption span:last-child
-{
-    color: var(--subtle);
-    font-size: 8px;
-    align-self: center;
 }
 .actions
 {
@@ -752,6 +736,65 @@ summary small
 {
     display: inline-block;
     margin-top: 10px;
+}
+.game-flow-steps
+{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 24px 0 28px;
+    padding: 0;
+    list-style: none;
+}
+.game-flow-steps li
+{
+    position: relative;
+    margin: 0;
+    padding: 15px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.035);
+}
+.game-flow-steps li + li::before
+{
+    content: "→";
+    position: absolute;
+    top: 50%;
+    left: -13px;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 11px;
+}
+.game-flow-steps span, .game-flow-steps strong, .game-flow-steps small
+{
+    display: block;
+}
+.game-flow-steps span
+{
+    margin-bottom: 7px;
+    color: var(--accent);
+    font-size: 9px;
+}
+.game-flow-steps strong
+{
+    font-size: 12px;
+}
+.game-flow-steps small
+{
+    margin-top: 4px;
+    color: var(--subtle);
+    font-size: 10px;
+}
+.technical-references
+{
+    margin-top: 20px;
+    font-size: 10px;
+}
+.technical-references a
+{
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 .journal
 {
@@ -1375,12 +1418,12 @@ body.media-open
     }
     h1
     {
-        font-size: clamp(27px, 7.3vw, 39px);
+        font-size: clamp(23px, 7vw, 36px);
     }
     .role
     {
-        font-size: 11px;
-        margin-bottom: 16px;
+        font-size: 12px;
+        margin-top: 16px;
     }
     .intro-name
     {
@@ -1402,20 +1445,6 @@ body.media-open
         width: 110px;
         height: 147px;
         box-shadow: 8px 8px 0 rgba(214, 174, 237, 0.06);
-    }
-    .portrait figcaption
-    {
-        display: block;
-        flex: 1;
-        margin-top: 0;
-    }
-    .portrait figcaption span
-    {
-        display: block;
-    }
-    .portrait figcaption span:last-child
-    {
-        margin-top: 5px;
     }
     .actions
     {
@@ -1515,6 +1544,18 @@ body.media-open
         padding-left: 0;
         padding-right: 0;
         font-size: 12px;
+    }
+    .game-flow-steps
+    {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .game-flow-steps li + li::before
+    {
+        content: "↓";
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .journal h2
     {
