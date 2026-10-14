@@ -23,7 +23,7 @@
         <a class="brand" href="#intro" aria-label="김경재 소개로 이동"><span>김경재<small>GAME CLIENT PROGRAMMER</small></span></a>
         <nav aria-label="섹션 이동">
             <a href="#intro" class="active" aria-current="location"><span>01</span> INTRO <small>소개</small></a>
-            <a href="#skills"><span>02</span> SKILLS <small>개발 역량</small></a>
+            <a href="#skills"><span>02</span> SKILLS <small>업무 숙련도</small></a>
             <a href="#birmingham"><span>03</span> EXPERIENCE <small>갓 세이브 버밍엄</small></a>
             <a href="#journal"><span>04</span> JOURNAL <small>저널 기능 · 저장과 복원</small></a>
             <a href="#projects"><span>05</span> STUDENT WORKS <small>학생 시절 프로젝트</small></a>
@@ -61,16 +61,28 @@
         </section>
         <section id="skills" class="section skills" aria-labelledby="skills-title">
             <div class="inner">
-                <div class="section-heading"><div><p class="eyebrow">02 / SKILLS</p><h2 id="skills-title">기술을 쓰는 이유까지 생각합니다.</h2></div><p>회사·개인·팀 프로젝트에서 직접 적용한 역량입니다.<br>각 항목에서 관련 구현 사례로 이동할 수 있습니다.</p></div>
-                <div class="skill-list">
-                    <article><h3>게임플레이 / 구조 설계</h3><div><strong>공통 동작은 재사용하고, 콘텐츠 차이는 데이터로 표현합니다.</strong><p>Unreal C++ · GAS · GameplayTag · Motion Warping · SceneComponent · Data Asset / Table · Interface · Delegate</p></div><a class="case-link" href="#interaction">상호작용 설계 ↗</a></article>
-                    <article><h3>저널 / 상태와 UI</h3><div><strong>진행 조건과 등록 상태를 나누고, 목록과 연출을 연결합니다.</strong><p>FlowGraph · Data Registry · Replication · MVVM · Delegate · 연출 큐</p></div><a class="case-link" href="#journal-features">저널 기능 ↗</a></article>
-                    <article><h3>저장 / 멀티플레이</h3><div><strong>저장된 진행 상태와 새로 발생한 이벤트를 구분합니다.</strong><p>FlowGraph · SaveGame · FStructuredArchive · Replication · RepNotify · Client / Server RPC</p></div><a class="case-link" href="#journal-save">저널 저장·복원 ↗</a></article>
-                    <article><h3>게임 플로우 / UI</h3><div><strong>타이틀부터 로딩, 플레이 종료까지 화면의 흐름을 연결합니다.</strong><p>Slate · MoviePlayer · UMG · MVVM · GameInstanceSubsystem · Layer / Stack · 위젯 풀링</p></div><a class="case-link" href="#ui-manager">게임 플로우 / UI ↗</a></article>
-                    <article><h3>에디터 / 파이프라인</h3><div><strong>반복 작업을 에디터 안에서 끝낼 수 있도록 도구를 만듭니다.</strong><p>Editor Utility Widget · Data Table 가공 · Wordbee · FText · JSON 직렬화</p></div><a class="case-link" href="#editor-tools">에디터 툴 ↗</a></article>
-                    <article><h3>분석 / 리소스 관리</h3><div><strong>로딩 흐름과 데이터 구조를 추적해 문제의 원인을 찾습니다.</strong><p>구간별 시간 측정 · 바이너리 분석 · 비동기 애셋 로딩 · 객체 재사용 · List View</p></div><a class="case-link" href="#journal-analysis">로딩 지연 분석 ↗</a></article>
+                <div class="section-heading"><div><p class="eyebrow">02 / SKILLS</p><h2 id="skills-title">업무 숙련도</h2></div><p>회사 프로젝트와 학생 시절 작품을 통해 쌓은 영역별 숙련도입니다.<br>근거 프로젝트를 누르면 해당 내용을 담은 구현 사례로 이동합니다.</p></div>
+                <table class="proficiency-table">
+                    <caption class="sr-only">영역별 업무 숙련 내용과 근거 프로젝트</caption>
+                    <thead><tr><th scope="col">영역</th><th scope="col">숙련 내용</th><th scope="col">근거 프로젝트</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">C++ / 구조 설계</th><td><strong>공통 기능을 재사용하고, 의존성을 줄이는 구조를 설계합니다.</strong><p>컴포넌트 분리, 인터페이스와 델리게이트를 통한 연결, 데이터와 실행 로직의 분리</p></td><td class="proficiency-evidence"><div class="evidence-links"><a href="#interaction" aria-label="갓 세이브 버밍엄의 상호작용 구조">버밍엄</a><a href="#blackspace" aria-label="학생 프로젝트 Black Space의 컴포넌트 설계">Black Space</a><a href="#zero-sector" aria-label="학생 프로젝트 Zero Sector의 컴포넌트 통신">Zero Sector</a></div></td></tr>
+                        <tr><th scope="row">엔진 / 에디터</th><td><strong>데이터와 도구로 콘텐츠 제작을 지원합니다.</strong><p>Unreal Engine 5.4 / 5.5 · C++ / Blueprint · Data Asset / Table / Registry · Editor Utility Widget</p></td><td class="proficiency-evidence"><div class="evidence-links"><a href="#editor-tools" aria-label="갓 세이브 버밍엄의 에디터 툴">버밍엄</a><a href="#blackspace" aria-label="학생 프로젝트 Black Space의 데이터 기반 무기">Black Space</a></div></td></tr>
+                        <tr><th scope="row">UI / 게임 플로우</th><td><strong>화면 흐름과 위젯의 수명, 데이터 갱신을 관리합니다.</strong><p>UMG · Slate / MoviePlayer · MVVM · 화면 계층과 입력 포커스 · 위젯 풀링과 이벤트 수명 관리</p></td><td class="proficiency-evidence"><div class="evidence-links"><a href="#ui-manager" aria-label="갓 세이브 버밍엄의 게임 플로우와 UI 매니저">버밍엄</a><a href="#zero-sector" aria-label="학생 프로젝트 Zero Sector의 UI와 기능 연결">Zero Sector</a></div></td></tr>
+                        <tr><th scope="row">네트워크 / 상태 관리</th><td><strong>서버와 클라이언트의 역할을 나누고 상태를 동기화합니다.</strong><p>Dedicated / Listen Server · Replication / RPC · 공유·개인 상태 분리 · 초기 상태와 신규 이벤트 구분</p></td><td class="proficiency-evidence"><div class="evidence-links"><a href="#journal-registration" aria-label="갓 세이브 버밍엄의 저널 등록과 상태 동기화">버밍엄</a></div></td></tr>
+                        <tr><th scope="row">분석 / 리소스 관리</th><td><strong>로딩 원인을 추적하고 지연 로딩과 재사용 전략을 적용합니다.</strong><p>구간별 시간 측정 · 바이너리 구조 분석 · 비동기 애셋 로딩 · 객체·위젯 재사용과 유지 비용 검토</p></td><td class="proficiency-evidence"><div class="evidence-links"><a href="#journal-analysis" aria-label="갓 세이브 버밍엄의 로딩 지연 분석">버밍엄</a><a href="#zero-sector" aria-label="학생 프로젝트 Zero Sector의 지연 로딩">Zero Sector</a><a href="#blackspace" aria-label="학생 프로젝트 Black Space의 객체 풀링 회고">Black Space</a></div></td></tr>
+                        <tr><th scope="row">전투 / AI</th><td><strong>공격과 입력, 대상 상태를 연결해 전투 동작을 구현합니다.</strong><p>Behavior Tree · AI Perception · 공격 이벤트와 애니메이션 연결 · 데이터 기반 무기 · Motion Warping</p></td><td class="proficiency-evidence"><div class="evidence-links"><a href="#blackspace" aria-label="학생 프로젝트 Black Space의 전투와 AI">Black Space</a><a href="#no-face" aria-label="학생 프로젝트 No-Face의 전투와 스킬">No-Face</a></div></td></tr>
+                        <tr><th scope="row">협업 / 버전 관리</th><td><strong>팀의 기능 개발을 조율하고 변경 사항과 병합을 관리합니다.</strong><p>Perforce / Swarm 코드 리뷰 · Git 브랜치와 병합 관리 · 팀 프로젝트의 개발 범위·진행 상황 조율</p></td><td class="proficiency-evidence"><div class="evidence-links"><a href="#birmingham" aria-label="갓 세이브 버밍엄의 개발 환경">버밍엄</a><a href="#zero-sector" aria-label="학생 프로젝트 Zero Sector의 팀장과 Git 관리">Zero Sector</a><a href="#no-face" aria-label="학생 프로젝트 No-Face의 팀장과 Git 관리">No-Face</a></div></td></tr>
+                    </tbody>
+                </table>
+                <div class="skill-tools">
+                    <h3>사용 도구</h3>
+                    <div class="skill-tool-grid">
+                        <div><h4>언어 / 엔진</h4><ul><li>C++ · Blueprint</li><li>Unreal Engine 5.4 / 5.5</li><li>Windows 게임 개발</li></ul></div>
+                        <div><h4>플러그인 / UI</h4><ul><li>Gameplay Ability System · FlowGraph</li><li>UMG · MVVM</li><li>Slate · MoviePlayer</li></ul></div>
+                        <div><h4>협업 / 버전 관리</h4><ul><li>Perforce · Swarm · Git</li><li>Confluence · Jira · Teams</li><li>코드 리뷰 · 브랜치와 병합 관리</li></ul></div>
+                    </div>
                 </div>
-                <div class="tool-strip"><span>함께 사용하는 도구</span><p>Perforce · Swarm · Git · Confluence · Jira · Teams</p><small>회사 프로젝트에서는 Perforce / Swarm 코드 리뷰, 팀 프로젝트에서는 Git 브랜치와 병합 관리</small></div>
             </div>
         </section>
         <section id="birmingham" class="section experience" aria-labelledby="birmingham-title">
@@ -82,7 +94,17 @@
                 </div>
                 <dl class="project-meta"><div><dt>회사 / 역할</dt><dd>오션드라이브 스튜디오<br>Client Programmer</dd></div><div><dt>개발 참여</dt><dd>2025.11 ~ 현재</dd></div><div><dt>개발 환경</dt><dd>UE 5.5 · C++ · Blueprint<br>Perforce · Swarm</dd></div><div><dt>플랫폼 / 네트워크</dt><dd>Windows<br>Dedicated / Listen Server</dd></div></dl>
                 <div class="actions"><a class="button" href="https://www.youtube.com/watch?v=jm-NFcVmeMo" target="_blank" rel="noopener noreferrer">공식 트레일러 <span>↗</span></a><a class="button" href="#journal">저널 기술 사례 <span>↓</span></a></div>
-                <div class="focus-grid"><article><span>01</span><h3>데이터 중심 콘텐츠</h3><p>상호작용 위치, 몽타주와 저널 이벤트를 데이터로 제어해 기획·연출 담당자가 직접 수정할 수 있게 구성했습니다.</p></article><article><span>02</span><h3>게임 플로우 / UI</h3><p>데이터 기반 UI 매니저로 타이틀·인게임 화면을 관리하고, Slate와 MoviePlayer로 로딩 중에도 연출이 이어지도록 구성했습니다.</p></article><article><span>03</span><h3>멀티플레이 동기화</h3><p>서버의 검증과 클라이언트의 실행을 분리하고, 복제된 상태와 신규 이벤트의 처리 시점을 구분했습니다.</p></article></div>
+                <div id="birmingham-summary" class="birmingham-summary">
+                    <h3>담당 구현 요약</h3>
+                    <div class="skill-list">
+                        <article><h3>게임플레이 / 구조 설계</h3><div><strong>공통 동작은 재사용하고, 콘텐츠 차이는 데이터로 표현합니다.</strong><p>Unreal C++ · GAS · GameplayTag · Motion Warping · SceneComponent · Data Asset / Table · Interface · Delegate</p></div><a class="case-link" href="#interaction">상호작용 설계 ↗</a></article>
+                        <article><h3>저널 / 상태와 UI</h3><div><strong>진행 조건과 등록 상태를 나누고, 목록과 연출을 연결합니다.</strong><p>FlowGraph · Data Registry · Replication · MVVM · Delegate · 연출 큐</p></div><a class="case-link" href="#journal-features">저널 기능 ↗</a></article>
+                        <article><h3>저장 / 멀티플레이</h3><div><strong>저장된 진행 상태와 새로 발생한 이벤트를 구분합니다.</strong><p>FlowGraph · SaveGame · FStructuredArchive · Replication · RepNotify · Client / Server RPC</p></div><a class="case-link" href="#journal-save">저널 저장·복원 ↗</a></article>
+                        <article><h3>게임 플로우 / UI</h3><div><strong>타이틀부터 로딩, 플레이 종료까지 화면의 흐름을 연결합니다.</strong><p>Slate · MoviePlayer · UMG · MVVM · GameInstanceSubsystem · Layer / Stack · 위젯 풀링</p></div><a class="case-link" href="#ui-manager">게임 플로우 / UI ↗</a></article>
+                        <article><h3>에디터 / 파이프라인</h3><div><strong>반복 작업을 에디터 안에서 끝낼 수 있도록 도구를 만듭니다.</strong><p>Editor Utility Widget · Data Table 가공 · Wordbee · FText · JSON 직렬화</p></div><a class="case-link" href="#editor-tools">에디터 툴 ↗</a></article>
+                        <article><h3>분석 / 리소스 관리</h3><div><strong>로딩 흐름과 데이터 구조를 추적해 문제의 원인을 찾습니다.</strong><p>구간별 시간 측정 · 바이너리 분석 · 비동기 애셋 로딩 · 객체 재사용 · List View</p></div><a class="case-link" href="#journal-analysis">로딩 지연 분석 ↗</a></article>
+                    </div>
+                </div>
                 <div class="detail-heading"><h3>구현 상세</h3><button class="text-button" data-expand-group="experience-details" aria-expanded="false">모두 펼치기 +</button></div>
                 <div id="experience-details" class="detail-list">
                     <details id="interaction">

@@ -461,6 +461,117 @@ dd small
     margin-top: 16px;
     font-size: 13px;
 }
+.proficiency-table
+{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+.proficiency-table th, .proficiency-table td
+{
+    padding: 20px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+.proficiency-table thead th
+{
+    padding-top: 0;
+    padding-bottom: 13px;
+    color: var(--subtle);
+    font-size: 11px;
+    font-weight: 500;
+}
+.proficiency-table th:first-child
+{
+    width: 18%;
+    padding-left: 0;
+}
+.proficiency-table th:last-child, .proficiency-table td:last-child
+{
+    width: 20%;
+    padding-right: 0;
+}
+.proficiency-table tbody th
+{
+    font-size: 13px;
+    font-weight: 650;
+}
+.proficiency-table td strong
+{
+    display: block;
+    font-size: 13px;
+}
+.proficiency-table td p
+{
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 12px;
+}
+.evidence-links
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+.evidence-links a
+{
+    display: inline-block;
+    padding: 4px 9px;
+    border: 1px solid rgba(231, 218, 255, 0.3);
+    border-radius: 3px;
+    color: #eee3f8;
+    font-size: 10px;
+    line-height: 1.6;
+    white-space: nowrap;
+}
+.evidence-links a:hover
+{
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.skill-tools
+{
+    margin-top: 40px;
+}
+.skill-tools > h3
+{
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+.skill-tool-grid
+{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+.skill-tool-grid > div
+{
+    padding-top: 17px;
+    border-top: 1px solid var(--border);
+}
+.skill-tool-grid h4
+{
+    font-size: 13px;
+}
+.skill-tool-grid ul
+{
+    margin: 10px 0 0;
+    padding-left: 17px;
+    font-size: 12px;
+}
+.skill-tool-grid li + li
+{
+    margin-top: 5px;
+}
+.birmingham-summary
+{
+    margin: 44px 0;
+}
+.birmingham-summary > h3
+{
+    margin-bottom: 18px;
+}
 .skill-list
 {
     border-top: 1px solid var(--border);
@@ -1620,6 +1731,61 @@ body.media-open
     .section-heading > p
     {
         font-size: 12px;
+    }
+    .proficiency-table, .proficiency-table tbody
+    {
+        display: block;
+    }
+    .proficiency-table thead
+    {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+    .proficiency-table tbody tr
+    {
+        display: block;
+        padding: 23px 0;
+        border-top: 1px solid var(--border);
+    }
+    .proficiency-table tbody tr:last-child
+    {
+        border-bottom: 1px solid var(--border);
+    }
+    .proficiency-table tbody th, .proficiency-table tbody td
+    {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+    }
+    .proficiency-table tbody th:first-child, .proficiency-table tbody td:last-child
+    {
+        width: 100%;
+    }
+    .proficiency-table tbody th
+    {
+        color: var(--accent);
+        font-size: 13px;
+    }
+    .proficiency-table tbody td
+    {
+        margin-top: 12px;
+    }
+    .proficiency-table .proficiency-evidence::before
+    {
+        content: "근거 프로젝트";
+        display: block;
+        margin-bottom: 7px;
+        color: var(--subtle);
+        font-size: 10px;
+    }
+    .skill-tool-grid
+    {
+        grid-template-columns: 1fr;
+        gap: 22px;
     }
     .skill-list article
     {
