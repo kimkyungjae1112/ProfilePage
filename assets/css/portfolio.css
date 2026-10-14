@@ -796,6 +796,135 @@ summary small
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+.interaction-visual
+{
+    margin: 24px 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: rgba(15, 10, 25, 0.28);
+}
+.interaction-visual figcaption
+{
+    margin: 0 0 16px;
+}
+.interaction-visual figcaption strong
+{
+    font-size: 13px;
+}
+.interaction-visual figcaption small
+{
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+}
+.interaction-visual-layout
+{
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 22px;
+}
+.interaction-visual img
+{
+    width: 100%;
+    height: auto;
+}
+.diagram-link
+{
+    display: block;
+}
+.diagram-link > span
+{
+    display: block;
+    margin-top: 8px;
+    color: var(--accent);
+    text-align: right;
+    font-size: 11px;
+}
+.diagram-link:hover > span
+{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.distance-legend > div
+{
+    padding: 12px 0 12px 13px;
+    border-left: 2px solid currentColor;
+}
+.distance-legend > div + div
+{
+    margin-top: 16px;
+}
+.distance-legend dt
+{
+    color: inherit;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+.distance-legend dd strong
+{
+    display: block;
+    margin-top: 4px;
+    color: inherit;
+    font-size: 17px;
+}
+.distance-legend dd span
+{
+    color: var(--muted);
+    font-size: 10px;
+}
+.distance-warp
+{
+    color: #bc93ff;
+}
+.distance-target
+{
+    color: #68d3b0;
+}
+.distance-limit
+{
+    color: #80a8ff;
+}
+.interaction-visual .diagram-note
+{
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    color: var(--subtle);
+    font-size: 11px;
+}
+.premove-sequence
+{
+    margin: 18px 0;
+    padding-left: 24px;
+}
+.premove-sequence li::marker
+{
+    color: var(--accent);
+    font-size: 11px;
+}
+.premove-sequence p
+{
+    margin-top: 5px;
+}
+.interaction-debug
+{
+    margin: 20px 0 26px;
+    padding: 16px 18px;
+    border-left: 2px solid #68d3b0;
+    background: rgba(104, 211, 176, 0.04);
+    font-size: 12px;
+}
+.interaction-debug p
+{
+    margin-top: 7px;
+}
+.interaction-debug code
+{
+    color: #9ce3cd;
+    font-family: inherit;
+}
 .journal
 {
     background: linear-gradient(130deg, #37223d, #2d2038);
@@ -1556,6 +1685,28 @@ body.media-open
         top: -18px;
         left: 50%;
         transform: translateX(-50%);
+    }
+    .interaction-visual
+    {
+        padding: 16px 12px;
+    }
+    .interaction-visual-layout
+    {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .distance-legend dt
+    {
+        font-size: 12px;
+    }
+    .distance-legend dd span
+    {
+        font-size: 11px;
+    }
+    .interaction-debug
+    {
+        padding: 14px;
+        font-size: 11px;
     }
     .journal h2
     {
