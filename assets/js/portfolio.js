@@ -155,7 +155,7 @@ async function CopyEmail()
     }
     catch
     {
-        const EmailLink = document.querySelector(".contact-row > a");
+        const EmailLink = document.getElementById("contact-email");
         const Selection = window.getSelection();
         const EmailRange = document.createRange();
         EmailRange.selectNodeContents(EmailLink.firstChild);

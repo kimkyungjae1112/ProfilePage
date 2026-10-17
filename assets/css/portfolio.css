@@ -1376,39 +1376,36 @@ summary small
     margin-top: 7px;
     font-size: 15px;
 }
-.contact
+.intro-contact
 {
-    background: #20192d;
-    padding-bottom: 28px;
-}
-.contact > .inner > p:not(.eyebrow)
-{
-    margin-top: 20px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
     font-size: 15px;
 }
-.contact-row
+.intro-contact-email, .intro-contact-links
 {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 24px;
-    margin-top: 34px;
+    gap: 10px 20px;
 }
-.contact-row > a
+.intro-contact-links
 {
-    font-size: calc(clamp(18px, 2vw, 28px) + 2px);
-    letter-spacing: -0.02em;
+    margin-top: 10px;
 }
-.contact-row > a span
+.intro-contact a span
 {
+    margin-left: 5px;
     color: var(--accent);
-    margin-left: 10px;
 }
-.contact .copy-status
+.intro-contact .copy-status
 {
-    min-height: 24px;
     color: var(--accent);
     font-size: 13px;
+}
+.intro-contact .copy-status:not(:empty)
+{
     margin-top: 8px;
 }
 footer
@@ -1991,10 +1988,6 @@ body.media-open
     {
         grid-template-columns: 1fr;
         gap: 35px;
-    }
-    .contact-row
-    {
-        gap: 14px;
     }
     dialog
     {
