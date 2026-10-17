@@ -12,49 +12,8 @@ const DialogImage = document.getElementById("dialog-image");
 const MediaTitle = document.getElementById("media-title");
 const MediaStatus = MediaDialog.querySelector("p");
 const CopyStatus = document.getElementById("copy-status");
-const InteractionVideo = document.getElementById("interaction-flow-video");
-const InteractionStepButtons = document.querySelectorAll("[data-interaction-video]");
-const InteractionVideoDescription = document.getElementById("interaction-video-description");
-const InteractionVideoDownload = document.getElementById("interaction-video-download");
-const InteractionVideoFallback = document.getElementById("interaction-video-fallback");
-const InteractionVideoStatus = document.getElementById("interaction-video-status");
 let ScrollScheduled = false;
 let CopyStatusTimeoutId = 0;
-let InteractionVideoRequestId = 0;
-
-async function SelectInteractionStep(Button)
-{
-    const RequestId = ++InteractionVideoRequestId;
-
-    InteractionStepButtons.forEach(function(StepButton)
-    {
-        StepButton.setAttribute("aria-pressed", String(StepButton === Button));
-    });
-
-    InteractionVideoDescription.textContent = Button.dataset.description;
-    InteractionVideoStatus.textContent = "";
-    InteractionVideoDownload.href = Button.dataset.interactionVideo;
-    InteractionVideoFallback.href = Button.dataset.interactionVideo;
-    InteractionVideo.setAttribute("aria-label", Button.dataset.title + " 개념 애니메이션");
-    InteractionVideo.pause();
-    InteractionVideo.poster = Button.dataset.poster;
-    InteractionVideo.src = Button.dataset.interactionVideo;
-    InteractionVideo.load();
-
-    try
-    {
-        await InteractionVideo.play();
-    }
-    catch
-    {
-        if (RequestId !== InteractionVideoRequestId)
-        {
-            return;
-        }
-
-        InteractionVideoStatus.textContent = "영상의 재생 버튼을 눌러 다시 시도해 주세요.";
-    }
-}
 
 function UpdateNavigation()
 {
@@ -217,14 +176,6 @@ async function CopyEmail()
         ShowCopyStatus("이메일 주소를 선택했습니다. Ctrl+C 또는 복사 메뉴를 사용해 주세요.");
     }
 }
-
-InteractionStepButtons.forEach(function(Button)
-{
-    Button.addEventListener("click", function()
-    {
-        SelectInteractionStep(Button);
-    });
-});
 
 ExpandButtons.forEach(function(Button)
 {

@@ -16,7 +16,13 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/portfolio.css">
-    <script src="assets/js/portfolio.js?v=47ebd8f67c73" defer></script>
+    <!-- 미완성 상호작용 데모: 스타일 연결 보류
+    <link rel="stylesheet" href="assets/css/interaction-demo.css?v=9e9fc40fb37c">
+    -->
+    <script src="assets/js/portfolio.js?v=98f0ea89cd02" defer></script>
+    <!-- 미완성 상호작용 데모: 실행 보류
+    <script type="module" src="assets/js/interaction-demo.js?v=7a53f3206cea"></script>
+    -->
 </head>
 <body>
     <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -217,21 +223,94 @@
                     </div>
                     <p class="diagram-note">워핑 목표 거리·접근 거리·도착 여유 거리는 상호작용 오브젝트마다 개별 조정할 수 있고, 공통 기반 클래스에 기본값을 정의해 함께 사용할 수도 있습니다. 위 수치는 개념 설명용 예시이며, 기본 접근 경계는 접근 거리 150과 도착 여유 거리 60을 더한 210입니다. NavMesh 투영 결과에 따라 도착 범위를 보정하며, 도해의 원은 실제 경로가 아닌 수평 거리 기준을 나타냅니다.</p>
                 </figure>
-                <figure class="interaction-video" id="interaction-video">
-                    <figcaption id="interaction-video-caption"><strong>상호작용 실행 흐름</strong><small>단계별 4.5초 개념 애니메이션 · 버튼을 누르면 해당 단계만 처음부터 재생됩니다.</small></figcaption>
-                    <div class="interaction-step-buttons" role="group" aria-label="상호작용 단계 선택">
-                        <button type="button" aria-pressed="true" aria-controls="interaction-flow-video" data-interaction-video="media/interaction-montage.mp4" data-poster="media/interaction-montage-poster.webp" data-title="몽타주 선택" data-description="도구·대상·자세·높이에 맞는 몽타주를 선택합니다."><span>01</span><strong>몽타주 선택</strong></button>
-                        <button type="button" aria-pressed="false" aria-controls="interaction-flow-video" data-interaction-video="media/interaction-approach.mp4" data-poster="media/interaction-approach-poster.webp" data-title="자동 접근" data-description="접근 경계 밖이면 이동하고, 도착 범위에 들어오면 멈춥니다."><span>02</span><strong>자동 접근</strong></button>
-                        <button type="button" aria-pressed="false" aria-controls="interaction-flow-video" data-interaction-video="media/interaction-warp.mp4" data-poster="media/interaction-warp-poster.webp" data-title="위치·방향 정렬" data-description="선택한 몽타주를 재생하며 루트 위치와 회전을 정렬합니다."><span>03</span><strong>위치·방향 정렬</strong></button>
-                        <button type="button" aria-pressed="false" aria-controls="interaction-flow-video" data-interaction-video="media/interaction-tilt.mp4" data-poster="media/interaction-tilt-poster.webp" data-title="상체 자세 보정" data-description="대상과의 높이 차이·수평 거리로 상체 자세를 보정합니다."><span>04</span><strong>상체 자세 보정</strong></button>
+                <!-- 미완성 상호작용 데모: 작업 재개를 위해 원본 보존
+                <figure class="interaction-demo" id="interaction-video" aria-labelledby="montage-demo-title">
+                    <figcaption>
+                        <button type="button" class="interaction-demo-toggle" id="interaction-demo-toggle" aria-expanded="false" aria-controls="montage-lab" aria-label="상호작용 데모 펼치기">
+                            <span class="demo-kicker">INTERACTION PLAYGROUND</span>
+                            <strong id="montage-demo-title">상호작용을 직접 확인해 보세요.</strong>
+                            <small>눌러서 데모를 펼치고, 조건과 데이터를 바꿔 각 단계를 실행할 수 있습니다.</small>
+                            <span class="demo-toggle-action" id="interaction-demo-toggle-label">직접 확인해 보기 +</span>
+                        </button>
+                    </figcaption>
+                    <div id="montage-lab" hidden>
+                        <div class="montage-stage-buttons" role="group" aria-label="상호작용 단계 선택"><button type="button" id="interaction-stage-0" data-montage-stage="0" aria-controls="interaction-panel-0" aria-pressed="true">01 몽타주 선택</button><button type="button" id="interaction-stage-1" data-montage-stage="1" aria-controls="interaction-panel-1" aria-pressed="false">02 자동 접근</button><button type="button" id="interaction-stage-2" data-montage-stage="2" aria-controls="interaction-panel-2" aria-pressed="false">03 위치·방향 정렬</button><button type="button" id="interaction-stage-3" data-montage-stage="3" aria-controls="interaction-panel-3" aria-pressed="false">04 상체 자세 보정</button></div>
+                        <div class="montage-scene">
+                            <div class="montage-scene-heading"><span id="montage-scene-label">SIDE VIEW / 높이 기반 선택</span><span id="montage-play-state">조건 설정 중</span></div>
+                            <canvas id="montage-canvas" width="900" height="420" role="img" aria-label="대상 조작점과 캐릭터 기준 높이를 비교하는 상호작용 장면">높이 입력과 아래 선택 결과로 몽타주 판정을 확인할 수 있습니다.</canvas>
+                            <p class="montage-scene-help">대상 기둥을 누르거나 분홍 점을 위아래로 끌어 높이를 바꾸세요. 아래 입력으로도 조절할 수 있습니다.</p>
+                        </div>
+                        <label class="montage-motion-option"><input type="checkbox" id="montage-motion" checked>움직임 재생 <small id="montage-motion-note">끄면 최종 자세만 표시합니다.</small></label>
+<div class="stage-reset"><button class="text-button" type="button" id="montage-reset">현재 단계 초기화</button></div><div class="interaction-stage-panel" id="interaction-panel-0" data-stage-panel="0" role="region" aria-labelledby="interaction-stage-0">                        <dl class="montage-readout"><div><dt>대상 높이</dt><dd id="montage-target-value">20 cm</dd></div><div><dt>기준점 높이</dt><dd id="montage-reference-value">0 cm</dd></div><div><dt>상대 높이</dt><dd id="montage-difference">+20 cm</dd></div></dl>
+                        <div class="montage-controls">
+                            <fieldset class="montage-settings"><legend>01 / 조건 설정</legend>
+                                <div class="montage-select-row"><label>대상 기준<select id="montage-source"><option value="handle">Handle 컴포넌트</option><option value="actor">Handle 없음 · 대상 원점</option></select></label><p class="montage-fixed-basis">캐릭터 기준 <strong>발바닥</strong></p></div>
+                                <label class="montage-range-label" for="montage-height"><span id="montage-height-label">Handle 높이</span><output id="montage-height-output" for="montage-height">20 cm</output></label>
+                                <input id="montage-height" type="range" min="-30" max="220" value="20" step="1">
+                                <div class="montage-presets" role="group" aria-label="상대 높이 예시"><button type="button" data-height-preset="0">0 cm</button><button type="button" data-height-preset="20">+20 cm</button><button type="button" data-height-preset="60">+60 cm</button><button type="button" data-height-preset="90">+90 cm</button></div>
+                                <label class="montage-range-label" for="montage-foot"><span>캐릭터 발 높이</span><output id="montage-foot-output" for="montage-foot">0 cm</output></label><input id="montage-foot" type="range" min="0" max="80" value="0" step="1">
+                                <label class="montage-stance-label">캐릭터 자세<select id="montage-stance"><option value="stand">서기</option><option value="crouch">앉기</option></select></label>
+                            </fieldset>
+                            <div class="montage-table-wrap"><h4>02 / DataTable 행 판정</h4><p>같은 태그·자세·우선순위인 네 행의 예시입니다. 높이 상한을 직접 바꿔 보세요.</p><table class="montage-table"><thead><tr><th scope="col">몽타주 애셋</th><th scope="col">높이 상한 (cm)</th><th scope="col">판정</th></tr></thead><tbody>
+                                <tr data-montage-row="0"><th scope="row">동작 A<small>지면</small></th><td><input type="number" min="0" max="180" step="1" value="0" data-montage-height="0" aria-label="동작 A 높이 상한"></td><td data-montage-result="0">제외</td></tr>
+                                <tr data-montage-row="1"><th scope="row">동작 B<small>낮은 대상</small></th><td><input type="number" min="0" max="180" step="1" value="30" data-montage-height="1" aria-label="동작 B 높이 상한"></td><td data-montage-result="1">선택 예정</td></tr>
+                                <tr data-montage-row="2"><th scope="row">동작 C<small>중간 대상</small></th><td><input type="number" min="0" max="180" step="1" value="60" data-montage-height="2" aria-label="동작 C 높이 상한"></td><td data-montage-result="2">후보</td></tr>
+                                <tr data-montage-row="3"><th scope="row">동작 D<small>높은 대상</small></th><td><input type="number" min="0" max="180" step="1" value="90" data-montage-height="3" aria-label="동작 D 높이 상한"></td><td data-montage-result="3">후보</td></tr>
+                            </tbody></table></div>
+                        </div>
+                        <p class="montage-reference-note" id="montage-reference-note">대상 조작점의 Z에서 캐릭터 발 높이를 뺍니다. Handle이 없으면 대상 액터의 위치를 사용합니다.</p>
+                        <div class="montage-selection"><div aria-live="polite" aria-atomic="true"><span>선택 결과</span><strong id="montage-selection-title">동작 B · 상한 30 cm</strong><p id="montage-selection-reason">+20 cm를 수용하는 가장 작은 상한은 30 cm입니다.</p></div><div class="montage-actions"><button class="button primary" type="button" id="montage-confirm" data-run-stage="0">선택 완료 · 몽타주 재생</button></div></div>
+
+</div><div class="interaction-stage-panel" id="interaction-panel-1" data-stage-panel="1" role="region" aria-labelledby="interaction-stage-1" hidden><h4 class="stage-panel-title">자동 접근 데이터</h4><p class="stage-description">선택된 스팟을 원점으로 두고, 투영된 두 후보까지의 수평 거리를 비교해 이동 목적지를 정합니다. 이동 중에는 매 틱 스팟까지의 거리로 도착을 판정합니다. 목적지에 닿기 전이라도 도착 범위 안에 들어오면 이동을 멈추고 첫 스텝을 시작합니다.</p><div class="stage-execution"><p id="approach-result" role="status">설정 후 실행하세요.</p><button type="button" class="button primary" data-run-stage="1">자동 접근 실행</button></div><fieldset class="stage-parameters"><legend>접근 데이터 · cm</legend><div class="stage-field-grid"><label>캐릭터 시작 X<input type="number" data-stage-value="StartX" value="-320" min="-600" max="600" step="1" required></label><label>캐릭터 시작 Y<input type="number" data-stage-value="StartY" value="0" min="-600" max="600" step="1" required></label><label>시연 이동 속도 · cm/s<input type="number" data-stage-value="MoveSpeed" value="120" min="0" max="400" step="1" required></label><label>판정 주체<select data-stage-value="Authority"><option value="server">서버 · 도착·취소 검사</option><option value="client">소유 클라이언트 · 도착 검사</option></select></label><label>접근 거리<input type="number" data-stage-value="ApproachDistance" value="150" min="0" max="400" step="1" required></label><label>도착 여유 거리<input type="number" data-stage-value="ArrivalMargin" value="60" min="0" max="200" step="1" required></label></div><div class="stage-checks"><label class="stage-checkbox"><input type="checkbox" data-stage-value="Enabled" checked>자동 접근 사용</label><label class="stage-checkbox"><input type="checkbox" data-stage-value="HasSpot" checked>유효 접근 지점 있음</label></div></fieldset><details class="stage-advanced"><summary>투영 좌표와 이동 샘플 설정</summary><div class="stage-field-grid"><label>후보 A 투영 오프셋 X<input type="number" data-stage-value="ProjectionAX" value="0" min="-600" max="600" step="1" required></label><label>후보 A 투영 오프셋 Y<input type="number" data-stage-value="ProjectionAY" value="0" min="-600" max="600" step="1" required></label><label>후보 B 투영 오프셋 X<input type="number" data-stage-value="ProjectionBX" value="0" min="-600" max="600" step="1" required></label><label>후보 B 투영 오프셋 Y<input type="number" data-stage-value="ProjectionBY" value="0" min="-600" max="600" step="1" required></label><label>이동 샘플<select data-stage-value="Scenario"><option value="normal">정상 이동</option><option value="deviation">목표와 반대 방향을 보는 이동</option><option value="stuck">제자리 정체</option><option value="timeout">목표 반대쪽으로 밀리는 이동</option></select></label></div><p>투영 좌표와 이동 샘플은 웹 시연용 입력입니다. 실패 결과를 미리 지정하지 않고, 해당 위치·방향 샘플을 틱 검사에 넣어 판정합니다. 취소 검사의 간격·임계값은 내부 시연값을 사용합니다. 실제 NavMesh 경로 탐색과 캐릭터 이동·복제는 게임 엔진에서 처리합니다. 클라이언트 선택 시 서버 취소 통지가 없는 8초까지만 관찰합니다.</p></details><dl class="stage-metrics"><div><dt>후보 A까지 수평 거리</dt><dd data-stage-output="CostA">—</dd></div><div><dt>후보 B까지 수평 거리</dt><dd data-stage-output="CostB">—</dd></div><div><dt>선택한 목적지</dt><dd data-stage-output="Goal">—</dd></div><div><dt>기본 접근 경계</dt><dd data-stage-output="BaseLimit">—</dd></div><div><dt>투영에 따른 추가 여유</dt><dd data-stage-output="AdditionalMargin">—</dd></div><div><dt>최종 도착 기준</dt><dd data-stage-output="Limit">—</dd></div><div><dt>현재 판정 거리 · 수평 거리 − 15</dt><dd data-stage-output="MeasuredDistance">—</dd></div><div><dt>도착 판정</dt><dd data-stage-output="Arrival">—</dd></div></dl><dl class="stage-metrics"><div><dt>현재 틱 시간</dt><dd data-stage-output="TickTime">—</dd></div><div><dt>현재 틱의 처리</dt><dd data-stage-output="TickResult">—</dd></div></dl>
+<div class="approach-trace"><strong>실행 흐름</strong><p data-stage-output="Trace">—</p></div>
+<p class="stage-formula">시작: (스팟까지 수평 거리 − 15) ≥ 접근 거리 + 도착 여유 + 투영 보정<br>도착: (스팟까지 수평 거리 − 15) &lt; 같은 도착 기준<br>서버 주기 검사 프레임: 방향 검사 → 거리 변화 검사 → 다음 틱으로 복귀<br>그 외 프레임: 서버 시간 초과 검사 → 서버·소유 클라이언트의 도착 검사</p></div><div class="interaction-stage-panel" id="interaction-panel-2" data-stage-panel="2" role="region" aria-labelledby="interaction-stage-2" hidden>
+    <h4 class="stage-panel-title">Target Name과 MotionWarp 노티파이</h4>
+    <p class="stage-description">Interaction은 스팟 위치, Root는 대상 위치, Handle은 Handle Component 위치입니다. 기획자는 몽타주에 MotionWarp 노티파이를 배치하고, 구간마다 Target Name과 위치·회전 보정을 지정합니다.</p>
+    <div class="stage-execution"><p id="warp-result" role="status">설정 후 실행하세요.</p><button type="button" class="button primary" data-run-stage="2">위치·방향 정렬 실행</button></div>
+    <div class="warp-presets" role="group" aria-label="모션 워핑 설정 예시">
+        <button type="button" data-warp-preset="split">Interaction 이동 → Handle 회전</button>
+        <button type="button" data-warp-preset="interaction">Interaction 위치만</button>
+        <button type="button" data-warp-preset="root">Root 위치만</button>
+        <button type="button" data-warp-preset="both">같은 타깃 위치·회전</button>
+    </div>
+    <div class="stage-field-grid"><label>몽타주 길이 · s<input type="number" data-stage-value="Duration" value="3" min="0.2" max="10" step="0.1" required></label></div>
+    <div class="warp-notifies"><fieldset class="warp-notify stage-parameters" data-warp-notify="0">
+        <legend>MotionWarp 노티파이 01</legend>
+        <label class="stage-checkbox"><input type="checkbox" data-stage-value="Notify1Enabled" checked>이 구간 사용</label>
+        <div class="stage-field-grid">
+            <label>Target Name<select data-stage-value="Notify1Target"><option value="Interaction" selected>Interaction</option><option value="Root">Root</option><option value="Handle">Handle</option></select></label>
+            <label>시작 시간 · s<input type="number" data-stage-value="Notify1Start" value="0" min="0" max="10" step="0.1" required></label>
+            <label>종료 시간 · s<input type="number" data-stage-value="Notify1End" value="1.5" min="0" max="10" step="0.1" required></label>
+        </div>
+        <div class="stage-checks"><label class="stage-checkbox"><input type="checkbox" data-stage-value="Notify1Translation" checked>위치 보정 · Translation</label><label class="stage-checkbox"><input type="checkbox" data-stage-value="Notify1Rotation">회전 보정 · Rotation</label></div>
+        <label class="warp-rotation-mode">회전 방식<select data-stage-value="Notify1RotationMode"><option value="match" selected>타깃 방향에 맞춤</option><option value="facing">타깃 위치를 바라봄</option></select></label>
+    </fieldset><fieldset class="warp-notify stage-parameters" data-warp-notify="1">
+        <legend>MotionWarp 노티파이 02</legend>
+        <label class="stage-checkbox"><input type="checkbox" data-stage-value="Notify2Enabled" checked>이 구간 사용</label>
+        <div class="stage-field-grid">
+            <label>Target Name<select data-stage-value="Notify2Target"><option value="Interaction">Interaction</option><option value="Root">Root</option><option value="Handle" selected>Handle</option></select></label>
+            <label>시작 시간 · s<input type="number" data-stage-value="Notify2Start" value="1.5" min="0" max="10" step="0.1" required></label>
+            <label>종료 시간 · s<input type="number" data-stage-value="Notify2End" value="3" min="0" max="10" step="0.1" required></label>
+        </div>
+        <div class="stage-checks"><label class="stage-checkbox"><input type="checkbox" data-stage-value="Notify2Translation">위치 보정 · Translation</label><label class="stage-checkbox"><input type="checkbox" data-stage-value="Notify2Rotation" checked>회전 보정 · Rotation</label></div>
+        <label class="warp-rotation-mode">회전 방식<select data-stage-value="Notify2RotationMode"><option value="match">타깃 방향에 맞춤</option><option value="facing" selected>타깃 위치를 바라봄</option></select></label>
+    </fieldset></div>
+    <p class="stage-formula">기본 예시: 0–1.5초에 Interaction으로 이동 → 1.5–3초에 Handle을 향해 회전.<br>이 데모에서는 구간을 겹치지 않게 설정합니다. 구간 밖에서는 위치와 방향을 유지합니다.</p>
+    <details class="stage-advanced"><summary>캐릭터 시작 위치와 방향 · cm / °</summary><div class="stage-field-grid"><label>현재 X<input type="number" data-stage-value="StartX" value="-180" min="-600" max="600" step="1" required></label><label>현재 Y<input type="number" data-stage-value="StartY" value="60" min="-600" max="600" step="1" required></label><label>현재 방향<input type="number" data-stage-value="StartYaw" value="45" min="-600" max="600" step="1" required></label></div></details>
+    <details class="stage-advanced"><summary>세 워프 타깃의 위치와 방향 · cm / °</summary>
+        <fieldset class="stage-parameters" data-warp-target="Interaction"><legend>Interaction · 스팟 위치</legend><label class="stage-checkbox"><input type="checkbox" data-stage-value="HasSpot" checked>유효 스팟 있음</label><div class="stage-field-grid"><label>Interaction X<input type="number" data-stage-value="SpotX" value="-90" min="-600" max="600" step="1" required></label><label>Interaction Y<input type="number" data-stage-value="SpotY" value="0" min="-600" max="600" step="1" required></label><label>Interaction 방향<input type="number" data-stage-value="SpotYaw" value="0" min="-600" max="600" step="1" required></label></div><p>스팟이 없으면 현재 캐릭터의 위치와 방향을 사용합니다.</p></fieldset>
+        <fieldset class="stage-parameters" data-warp-target="Root"><legend>Root · 대상 위치</legend><div class="stage-field-grid"><label>Root X<input type="number" data-stage-value="RootX" value="0" min="-600" max="600" step="1" required></label><label>Root Y<input type="number" data-stage-value="RootY" value="0" min="-600" max="600" step="1" required></label><label>Root 방향<input type="number" data-stage-value="RootYaw" value="0" min="-600" max="600" step="1" required></label></div></fieldset>
+        <fieldset class="stage-parameters" data-warp-target="Handle"><legend>Handle · Handle Component 위치</legend><label class="stage-checkbox"><input type="checkbox" data-stage-value="HasHandle" checked>Handle 컴포넌트 있음</label><div class="stage-field-grid"><label>Handle X<input type="number" data-stage-value="HandleX" value="0" min="-600" max="600" step="1" required></label><label>Handle Y<input type="number" data-stage-value="HandleY" value="40" min="-600" max="600" step="1" required></label><label>Handle 방향<input type="number" data-stage-value="HandleYaw" value="90" min="-600" max="600" step="1" required></label></div><p>컴포넌트가 없으면 Handle을 사용하는 구간의 보정을 생략합니다.</p></fieldset>
+    </details>
+    <dl class="stage-metrics"><div><dt>Interaction · 스팟 위치</dt><dd data-stage-output="Interaction">—</dd></div><div><dt>Root · 대상 위치</dt><dd data-stage-output="Root">—</dd></div><div><dt>Handle · 컴포넌트 위치</dt><dd data-stage-output="Handle">—</dd></div><div><dt>현재 캐릭터 위치</dt><dd data-stage-output="Position">—</dd></div><div><dt>현재 캐릭터 방향</dt><dd data-stage-output="Yaw">—</dd></div><div><dt>몽타주 재생 시간</dt><dd data-stage-output="Time">—</dd></div><div><dt>진행 중인 MotionWarp 노티파이</dt><dd data-stage-output="ActiveNotify">—</dd></div></dl>
+    <p class="stage-formula">등록한 타깃을 노티파이별로 참조하는 과정을 웹 보간 애니메이션으로 표현했습니다. 실제 게임 애셋을 재생하지 않습니다.</p>
+</div><div class="interaction-stage-panel" id="interaction-panel-3" data-stage-panel="3" role="region" aria-labelledby="interaction-stage-3" hidden><h4 class="stage-panel-title">상체 자세 보정 데이터</h4><p class="stage-description">상체 기준점은 캡슐 중심에 자세별 오프셋을 더해 계산합니다. Handle이 없으면 대상 액터의 위치를 사용합니다.</p><div class="stage-execution"><p id="tilt-result" role="status">설정 후 실행하세요.</p><button type="button" class="button primary" data-run-stage="3">상체 자세 보정 실행</button></div><fieldset class="stage-parameters"><legend>대상과 상체 기준점 · cm</legend><div class="stage-field-grid"><label>대상 기준<select data-stage-value="Source"><option value="handle">Handle 컴포넌트</option><option value="actor">Handle 없음 · 대상 원점</option></select></label><label>자세<select data-stage-value="Stance"><option value="stand">서기</option><option value="crouch">앉기</option></select></label><label>캡슐 중심 Z<input type="number" data-stage-value="CapsuleZ" value="88" min="30" max="180" step="1" required></label><label>대상 X · 캐릭터에서의 거리<input type="number" data-stage-value="TargetX" value="120" min="0" max="400" step="1" required></label><label>Handle 높이 Z<input type="number" data-stage-value="HandleZ" value="65" min="-30" max="240" step="1" required></label><label>대상 원점 Z<input type="number" data-stage-value="ActorZ" value="0" min="-30" max="240" step="1" required></label><label>서기 기준점 오프셋 X<input type="number" data-stage-value="StandOffsetX" value="0" min="-80" max="80" step="1" required></label><label>서기 기준점 오프셋 Z<input type="number" data-stage-value="StandOffsetZ" value="40" min="-80" max="100" step="1" required></label><label>앉기 기준점 오프셋 X<input type="number" data-stage-value="CrouchOffsetX" value="0" min="-80" max="80" step="1" required></label><label>앉기 기준점 오프셋 Z<input type="number" data-stage-value="CrouchOffsetZ" value="5" min="-80" max="100" step="1" required></label></div></fieldset><dl class="stage-metrics"><div><dt>상체 기준점 · X, Z</dt><dd data-stage-output="Origin">—</dd></div><div><dt>사용하는 대상 위치 · X, Z</dt><dd data-stage-output="Target">—</dd></div><div><dt>기준점에서의 수평 거리</dt><dd data-stage-output="Horizontal">—</dd></div><div><dt>기준점과의 높이 차이</dt><dd data-stage-output="Height">—</dd></div><div><dt>계산된 보정 각도</dt><dd data-stage-output="Pitch">—</dd></div><div><dt>현재 표시 각도</dt><dd data-stage-output="AppliedPitch">—</dd></div></dl><p class="stage-formula">보정 각도 = atan2(대상 Z − 상체 기준점 Z, 수평 거리)<br>계산한 각도와 기준점을 표시하며, 웹 캐릭터의 자세는 보정 과정을 설명하는 도식입니다.</p></div>
+                        <p class="montage-stage-help" id="montage-stage-help">각 단계의 데이터를 조절한 뒤 실행 버튼을 눌러 확인하세요.</p>
+                        <details class="montage-rules"><summary>선택 규칙과 데모 범위</summary><div><p>각 행의 몽타주 애셋·태그·자세 조건을 먼저 확인하고, 대상의 상대 높이가 행의 상한 이하인 후보를 모읍니다. 우선순위가 가장 높은 후보 중 높이 상한이 가장 작은 행을 선택하며, 두 조건이 같으면 무작위로 고릅니다. 이 데모의 네 행은 같은 조건과 우선순위를 사용합니다.</p><p>상대 높이 +20은 기본 상한 30을 선택하고, -20은 0을 선택합니다. 정확히 30이면 30에 포함되며, 90을 넘으면 기본 네 행에서는 일치하는 몽타주가 없습니다. 실제 구현은 높이를 구할 수 없으면 높이 조건을 건너뛰고, 높이 무시 행도 지원합니다.</p><p>높이 상한은 선택 조건이므로 수정해도 애셋의 동작 자체는 바뀌지 않습니다. 네 동작의 기준 자세는 발에서 0·30·60·90 cm에 닿는 예시이며, 실제 조작점과의 차이는 상체 보정 단계에서 비교할 수 있습니다.</p><p>실제 게임 애셋 대신 선택 규칙과 동작 차이를 웹 캐릭터로 재현했습니다. 애셋 이름과 자세·시간은 설명용이며, 접근 거리 150·도착 여유 60·워핑 거리 90도 예시값입니다.</p></div></details>
+                        <noscript><p>직접 조작하는 데모를 사용하려면 JavaScript를 켜 주세요.</p></noscript>
                     </div>
-                    <p class="interaction-video-description" id="interaction-video-description">도구·대상·자세·높이에 맞는 몽타주를 선택합니다.</p>
-                    <video id="interaction-flow-video" src="media/interaction-montage.mp4" controls playsinline preload="metadata" aria-label="몽타주 선택 개념 애니메이션" poster="media/interaction-montage-poster.webp" width="1280" height="800" aria-describedby="interaction-video-caption interaction-video-description">
-                        <a id="interaction-video-fallback" href="media/interaction-montage.mp4">선택한 단계 영상 열기</a>
-                    </video>
-                    <p class="interaction-video-status" id="interaction-video-status" role="status"></p>
-                    <a class="text-link" id="interaction-video-download" href="media/interaction-montage.mp4" download>선택한 단계 영상 다운로드 ↓</a>
                 </figure>
+                -->
                 <div class="detail-heading"><h3>상호작용 설계와 구현</h3><button class="text-button" data-expand-group="interaction-details" aria-expanded="false">모두 펼치기 +</button></div>
                 <div id="interaction-details" class="detail-list">
                     <details id="interaction-execution" open>
@@ -276,9 +355,11 @@
                     <details id="interaction-correction">
                         <summary><span class="detail-number">04</span><span>모션 워핑과 상체 틸트로 실제 대상에 정렬<small>Motion Warping · 루트모션 · 가산 블렌딩</small></span></summary>
                         <div class="detail-body">
-                            <h4>접근 위치와 모션 워핑 목표 분리</h4>
-                            <p>자동 접근은 동작을 시작할 수 있는 범위까지 이동시키고, Motion Warping은 이후 몽타주의 루트 이동과 회전을 대상 배치에 맞춥니다. 대상 기준 정렬, 캐릭터가 자리할 위치, 손이 조작할 지점의 목표를 분리해 각각 다른 기준으로 계산합니다.</p>
-                            <p>공통 실행 계층이 목표를 등록하고, 몽타주의 워핑 구간과 보정 로직이 실제 루트모션을 조정하도록 구성했습니다. 기존 루트 이동이 있으면 이동량을 변형하고, 없는 구간은 이징을 적용한 이동량을 생성합니다.</p>
+                            <h4>세 Target Name과 몽타주 노티파이로 위치·회전 제어</h4>
+                            <p>자동 접근은 동작을 시작할 수 있는 범위까지 캐릭터를 이동시킵니다. 이후 공통 실행 계층은 Motion Warping에 세 목표를 각각의 Target Name으로 등록합니다.</p>
+                            <ul class="warp-target-definitions"><li><strong>Interaction</strong> — 상호작용 스팟 위치</li><li><strong>Root</strong> — 대상 위치</li><li><strong>Handle</strong> — 대상의 Handle Component 위치</li></ul>
+                            <p>기획자는 몽타주에 MotionWarp 노티파이를 배치하고, 각 구간이 참조할 Target Name과 위치 보정·회전 보정 여부를 지정합니다. 한 타깃으로 위치만 이동하거나, Interaction으로 위치를 이동한 다음 별도 구간에서 Handle을 향해 회전하도록 구성할 수 있습니다.</p>
+                            <p>타깃 등록은 목표 데이터를 제공하고, 실제 이동과 회전의 적용 시점은 몽타주의 노티파이 설정이 결정합니다. 대상 위치와 스팟 위치를 구분하므로 몽타주 연출에 맞는 목표를 선택할 수 있습니다.</p>
                             <h4>대상 높이와 거리로 상체 틸트 계산</h4>
                             <p>모션 선택은 발바닥 기준의 높이 구간을 판정하고, 상체 틸트는 자세별 상체 기준점에서 대상을 향하는 각도를 계산합니다. 높이 차이와 수평 거리로 보정 각도를 구하므로 대상 높이가 같아도 거리가 달라지면 자세가 달라집니다.</p>
                             <p>몽타주로 기본 동작을 선택하고 틸트로 연속적인 자세 보정을 더하도록 역할을 나눴습니다. 애니메이션 애셋 참조에서는 타입별 보정 포즈와 가산 블렌딩, 보정 강도를 조절하는 커브를 확인했습니다.</p>
