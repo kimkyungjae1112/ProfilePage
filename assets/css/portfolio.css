@@ -279,6 +279,11 @@ main
     height: 1px;
     background: var(--accent);
 }
+.section:not(.intro) .eyebrow
+{
+    font-size: 16px;
+    letter-spacing: 0.13em;
+}
 .intro
 {
     position: relative;
@@ -476,6 +481,10 @@ dd small
 .section-heading .eyebrow
 {
     margin-bottom: 16px;
+}
+.skills h2
+{
+    font-size: clamp(23px, 2vw, 28px);
 }
 .section-heading > p
 {
@@ -979,6 +988,10 @@ summary small
 {
     color: #68d3b0;
 }
+.distance-arrival
+{
+    color: #e6c589;
+}
 .distance-limit
 {
     color: #80a8ff;
@@ -1401,12 +1414,27 @@ summary small
 }
 .intro-contact .copy-status
 {
+    position: fixed;
+    z-index: 30;
+    right: 20px;
+    bottom: 20px;
+    max-width: min(420px, calc(100% - 40px));
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #2d2038;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     color: var(--accent);
     font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 180ms, transform 180ms;
 }
 .intro-contact .copy-status:not(:empty)
 {
-    margin-top: 8px;
+    opacity: 1;
+    transform: translateY(0);
 }
 footer
 {
@@ -1649,6 +1677,10 @@ body.media-open
     {
         font-size: 10px;
         margin-bottom: 24px;
+    }
+    .section:not(.intro) .eyebrow
+    {
+        font-size: 14px;
     }
     .intro-layout
     {

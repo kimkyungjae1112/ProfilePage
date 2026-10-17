@@ -13,6 +13,7 @@ const MediaTitle = document.getElementById("media-title");
 const MediaStatus = MediaDialog.querySelector("p");
 const CopyStatus = document.getElementById("copy-status");
 let ScrollScheduled = false;
+let CopyStatusTimeoutId = 0;
 
 function UpdateNavigation()
 {
@@ -139,6 +140,17 @@ function CloseMedia()
     MediaDialog.close();
 }
 
+function ShowCopyStatus(Message)
+{
+    window.clearTimeout(CopyStatusTimeoutId);
+    CopyStatus.textContent = Message;
+    CopyStatusTimeoutId = window.setTimeout(function()
+    {
+        CopyStatus.textContent = "";
+        CopyStatusTimeoutId = 0;
+    }, 2500);
+}
+
 async function CopyEmail()
 {
     const Email = "rudwo1590@gmail.com";
@@ -151,7 +163,7 @@ async function CopyEmail()
         }
 
         await navigator.clipboard.writeText(Email);
-        CopyStatus.textContent = "이메일 주소를 복사했습니다.";
+        ShowCopyStatus("이메일 주소를 복사했습니다.");
     }
     catch
     {
@@ -161,7 +173,7 @@ async function CopyEmail()
         EmailRange.selectNodeContents(EmailLink.firstChild);
         Selection.removeAllRanges();
         Selection.addRange(EmailRange);
-        CopyStatus.textContent = "이메일 주소를 선택했습니다. Ctrl+C 또는 복사 메뉴를 사용해 주세요.";
+        ShowCopyStatus("이메일 주소를 선택했습니다. Ctrl+C 또는 복사 메뉴를 사용해 주세요.");
     }
 }
 

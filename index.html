@@ -16,7 +16,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/portfolio.css">
-    <script src="assets/js/portfolio.js" defer></script>
+    <script src="assets/js/portfolio.js?v=32d4ed9314f4" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -111,12 +111,11 @@
                 <div id="birmingham-summary" class="birmingham-summary">
                     <h3>담당 구현 요약</h3>
                     <div class="skill-list">
-                        <article><h3>게임플레이 / 구조 설계</h3><div><strong>공통 동작은 재사용하고, 콘텐츠 차이는 데이터로 표현합니다.</strong><p>Unreal C++ · GAS · GameplayTag · Motion Warping · SceneComponent · Data Asset / Table · Interface · Delegate</p></div><a class="case-link" href="#guide-interaction">상호작용 설계 ↗</a></article>
-                        <article><h3>저널 / 상태와 UI</h3><div><strong>진행 조건과 등록 상태를 나누고, 목록과 연출을 연결합니다.</strong><p>FlowGraph · Data Registry · Replication · MVVM · Delegate · 연출 큐</p></div><a class="case-link" href="#guide-journal">저널 기능 ↗</a></article>
-                        <article><h3>저장 / 멀티플레이</h3><div><strong>저장된 진행 상태와 새로 발생한 이벤트를 구분합니다.</strong><p>FlowGraph · SaveGame · FStructuredArchive · Replication · RepNotify · Client / Server RPC</p></div><a class="case-link" href="#journal-save">저널 저장·복원 ↗</a></article>
-                        <article><h3>게임 플로우 / UI</h3><div><strong>타이틀부터 로딩, 플레이 종료까지 화면의 흐름을 연결합니다.</strong><p>Slate · MoviePlayer · UMG · MVVM · GameInstanceSubsystem · Layer / Stack · 위젯 풀링</p></div><a class="case-link" href="#ui-manager">게임 플로우 / UI ↗</a></article>
-                        <article><h3>에디터 / 파이프라인</h3><div><strong>반복 작업을 에디터 안에서 끝낼 수 있도록 도구를 만듭니다.</strong><p>Editor Utility Widget · Data Table 가공 · Wordbee · FText · JSON 직렬화</p></div><a class="case-link" href="#editor-tools">에디터 툴 ↗</a></article>
-                        <article><h3>분석 / 리소스 관리</h3><div><strong>로딩 흐름과 데이터 구조를 추적해 문제의 원인을 찾습니다.</strong><p>구간별 시간 측정 · 바이너리 분석 · 비동기 애셋 로딩 · 객체 재사용 · List View</p></div><a class="case-link" href="#journal-analysis">로딩 지연 분석 ↗</a></article>
+                        <article><h3>상호작용 / 연출</h3><div><strong>상황별 동작 선택부터 접근·위치·자세 보정까지 연결했습니다.</strong><p>대상별 실행 지점과 몽타주 데이터를 구성하고, 자동 접근·모션 워핑·상체 틸트를 공통 실행 경로로 처리했습니다.</p></div><a class="case-link" href="#guide-interaction">상호작용 설계 ↗</a></article>
+                        <article><h3>저널 / 상태와 UI</h3><div><strong>진행 조건과 등록 상태를 나누고, 목록·읽음 표시·연출을 연결했습니다.</strong><p>FlowGraph와 공유·개인 컴포넌트, MVVM을 연동하고, 프레임 단위 큐로 신규 등록 연출을 순서대로 처리했습니다.</p></div><a class="case-link" href="#guide-journal">저널 기능 ↗</a></article>
+                        <article><h3>게임 플로우 / UI</h3><div><strong>타이틀·로딩·인게임·종료를 하나의 화면 관리 구조로 연결했습니다.</strong><p>데이터 기반 UI 매니저로 화면 계층·입력 포커스·위젯 재사용을 관리하고, Slate와 MoviePlayer로 로딩 연출을 구현했습니다.</p></div><a class="case-link" href="#ui-manager">게임 플로우 / UI ↗</a></article>
+                        <article><h3>에디터 데이터 도구</h3><div><strong>반복적인 테이블 가공을 에디터 안에서 처리할 수 있게 했습니다.</strong><p>Editor Utility Widget으로 필요한 열을 다른 테이블로 복사·저장하고, 외부 CSV·JSON 입출력의 반복을 줄였습니다.</p></div><a class="case-link" href="#editor-tools">에디터 툴 ↗</a></article>
+                        <article><h3>현지화 플러그인</h3><div><strong>기존 플러그인을 유지보수하고, 텍스트 식별자의 중복을 방지했습니다.</strong><p>텍스트 파일을 JSON으로 직렬화해 Wordbee 서버와 연결하고, 프로젝트에 맞춘 키 발급 로직을 적용했습니다.</p></div><a class="case-link" href="#localization">현지화 유지보수 ↗</a></article>
                     </div>
                 </div>
                 <div class="detail-heading"><h3>구현 상세</h3><button class="text-button" data-expand-group="experience-details" aria-expanded="false">모두 펼치기 +</button></div>
@@ -200,10 +199,11 @@
                         <dl class="distance-legend">
                             <div class="distance-warp"><dt>워핑 목표 거리</dt><dd><strong>90</strong><span>몽타주에서 정렬할 위치</span></dd></div>
                             <div class="distance-target"><dt>접근 거리</dt><dd><strong>150</strong><span>이동 목적지 후보 · NavMesh 투영 전</span></dd></div>
+                            <div class="distance-arrival"><dt>도착 여유 거리</dt><dd><strong>60</strong><span>접근 거리에 더하는 도착 판정의 여유 범위</span></dd></div>
                             <div class="distance-limit"><dt>기본 접근 경계</dt><dd><strong>150 + 60 = 210</strong><span>자동 접근을 시작하고 도착을 판정하는 범위</span></dd></div>
                         </dl>
                     </div>
-                    <p class="diagram-note">도착 여유 범위를 60으로 둔 설명용 예시입니다. NavMesh 투영 결과에 따라 도착 범위를 보정하고 거리 판정의 여유를 적용합니다. 원은 수평 거리 기준을 나타내며 실제 이동 경로를 뜻하지 않습니다.</p>
+                    <p class="diagram-note">워핑 목표 거리·접근 거리·도착 여유 거리는 상호작용 오브젝트마다 개별 조정할 수 있고, 공통 기반 클래스에 기본값을 정의해 함께 사용할 수도 있습니다. 위 수치는 개념 설명용 예시이며, 기본 접근 경계는 접근 거리 150과 도착 여유 거리 60을 더한 210입니다. NavMesh 투영 결과에 따라 도착 범위를 보정하며, 도해의 원은 실제 경로가 아닌 수평 거리 기준을 나타냅니다.</p>
                 </figure>
                 <div class="detail-heading"><h3>상호작용 설계와 구현</h3><button class="text-button" data-expand-group="interaction-details" aria-expanded="false">모두 펼치기 +</button></div>
                 <div id="interaction-details" class="detail-list">
