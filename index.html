@@ -58,7 +58,6 @@
                             </div>
                             <div class="intro-contact-links">
                                 <a href="tel:01031033186" aria-label="전화번호 010-3103-3186">010-3103-3186 <span aria-hidden="true">↗</span></a>
-                                <a href="https://github.com/kimkyungjae1112" target="_blank" rel="noopener noreferrer">GitHub / kimkyungjae1112 <span aria-hidden="true">↗</span></a>
                             </div>
                             <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
                         </div>
@@ -107,7 +106,7 @@
                     <figure class="project-cover"><img src="images/previews/birmingham.webp" width="600" height="343" alt="갓 세이브 버밍엄 대표 이미지" loading="eager"><figcaption>오션드라이브 스튜디오 · 샌드박스 / 생존 시뮬레이션</figcaption></figure>
                 </div>
                 <dl class="project-meta"><div><dt>회사 / 역할</dt><dd>오션드라이브 스튜디오<br>Client Programmer</dd></div><div><dt>개발 참여</dt><dd>2025.11 ~ 현재</dd></div><div><dt>개발 환경</dt><dd>UE 5.5 · C++ · Blueprint<br>Perforce · Swarm</dd></div><div><dt>플랫폼 / 네트워크</dt><dd>Windows<br>Dedicated Server</dd></div></dl>
-                <div class="actions"><a class="button" href="https://www.youtube.com/watch?v=jm-NFcVmeMo" target="_blank" rel="noopener noreferrer">공식 트레일러 <span>↗</span></a><a class="button" href="#journal">저널 기술 사례 <span>↓</span></a></div>
+                <div class="actions"><a class="button" href="https://www.youtube.com/watch?v=jm-NFcVmeMo" target="_blank" rel="noopener noreferrer">공식 트레일러 <span>↗</span></a></div>
                 <div id="birmingham-summary" class="birmingham-summary">
                     <h3>담당 구현 요약</h3>
                     <div class="skill-list">
@@ -116,6 +115,7 @@
                         <article><h3>게임 플로우 / UI</h3><div><strong>타이틀·로딩·인게임·종료를 하나의 화면 관리 구조로 연결했습니다.</strong><p>데이터 기반 UI 매니저로 화면 계층·입력 포커스·위젯 재사용을 관리하고, Slate와 MoviePlayer로 로딩 연출을 구현했습니다.</p></div><a class="case-link" href="#ui-manager">게임 플로우 / UI ↗</a></article>
                         <article><h3>에디터 데이터 도구</h3><div><strong>반복적인 테이블 가공을 에디터 안에서 처리할 수 있게 했습니다.</strong><p>Editor Utility Widget으로 필요한 열을 다른 테이블로 복사·저장하고, 외부 CSV·JSON 입출력의 반복을 줄였습니다.</p></div><a class="case-link" href="#editor-tools">에디터 툴 ↗</a></article>
                         <article><h3>현지화 플러그인</h3><div><strong>기존 플러그인을 유지보수하고, 텍스트 식별자의 중복을 방지했습니다.</strong><p>텍스트 파일을 JSON으로 직렬화해 Wordbee 서버와 연결하고, 프로젝트에 맞춘 키 발급 로직을 적용했습니다.</p></div><a class="case-link" href="#localization">현지화 유지보수 ↗</a></article>
+                        <article><h3>추가 구현 / 버그 수정</h3><div><strong>게임플레이 기능을 추가하고 데디케이티드 서버의 동기화 오류를 수정했습니다.</strong><p>GAS 기반 주량 스킬과 화상 기능을 구현하고, 시설물의 애니메이션·상태가 클라이언트로 동기화되지 않던 문제를 해결했습니다.</p></div><a class="case-link" href="#additional-work">구현·버그 수정 ↗</a></article>
                     </div>
                 </div>
                 <div class="detail-heading"><h3>구현 상세</h3><button class="text-button" data-expand-group="experience-details" aria-expanded="false">모두 펼치기 +</button></div>
@@ -178,12 +178,24 @@
                     </details>
                     <details id="editor-tools"><summary><span class="detail-number">04</span><span>기획자를 위한 에디터 데이터 가공 도구<small>Editor Utility Widget · Data Table</small></span></summary><div class="detail-body"><p>Data Table 수정에 반복적인 외부 파일 입출력이 필요했던 흐름을 에디터 내부 작업으로 바꿨습니다.</p><ul><li>Editor Utility Widget 기반 UI로 비개발 직군도 사용할 수 있는 도구를 제작했습니다.</li><li>특정 열의 데이터를 다른 Data Table로 복사하고 저장하도록 구현했습니다.</li><li>CSV / JSON Import·Export를 거치지 않고 에디터에서 필요한 데이터를 직접 가공할 수 있게 했습니다.</li></ul></div></details>
                     <details id="localization"><summary><span class="detail-number">05</span><span>현지화 플러그인 유지보수와 텍스트 직렬화<small>Wordbee · FText · JsonObject</small></span></summary><div class="detail-body"><p>언리얼 텍스트 파일을 읽고 JsonObject로 직렬화해 Wordbee 플러그인 서버와 통신하는 현지화 프로세스를 정리했습니다. FText의 로컬라이징 네임스페이스와 키가 중복되지 않도록 커스텀 키 발급 로직을 적용했습니다.</p><p>외부 플러그인의 내부 구조를 파악하고 프로젝트 요구에 맞게 수정·유지보수하는 경험을 쌓았습니다.</p></div></details>
+                    <details id="additional-work">
+                        <summary><span class="detail-number">06</span><span>추가 게임플레이 구현과 동기화 버그 수정<small>GAS · 화상 · Dedicated Server · 상태 동기화</small></span></summary>
+                        <div class="detail-body">
+                            <h4>게임플레이 기능 구현</h4>
+                            <ul>
+                                <li>Gameplay Ability System(GAS)을 기반으로 주량 스킬을 개발했습니다.</li>
+                                <li>화상 기능을 구현했습니다.</li>
+                            </ul>
+                            <h4>시설물 애니메이션·상태 동기화 오류 수정</h4>
+                            <p>시설물의 애니메이션과 상태가 데디케이티드 서버에서 클라이언트로 동기화되지 않던 문제를 해결했습니다.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
         </section>
         <section id="interaction" class="section interaction-case" aria-labelledby="interaction-title">
             <div class="inner">
-                <p class="eyebrow">04 / ENGINEERING CASE STUDY</p><span class="badge">갓 세이브 버밍엄 · 상호작용 시스템</span>
+                <p class="eyebrow">04 / INTERACTION</p><span class="badge">갓 세이브 버밍엄 · 상호작용 시스템</span>
                 <h2 id="interaction-title">상황에 맞는 동작을 고르고,<br>실제 대상 위치에 맞췄습니다.</h2>
                 <p class="lead case-lead">상호작용 대상마다 시작 위치, 조작점의 높이와 재생할 동작이 달랐습니다. 대상 액터에 부착하는 컴포넌트로 위치·연출 데이터를 모듈화하고, 상황에 맞는 몽타주 선택 → 자동 접근 → 모션 워핑과 상체 틸트 보정으로 이어지는 실행 구조를 구성했습니다.</p>
                 <ol class="game-flow-steps" aria-label="상호작용 실행 흐름">
@@ -263,7 +275,7 @@
 
         <section id="journal" class="section journal" aria-labelledby="journal-title">
             <div class="inner">
-                <p class="eyebrow">05 / ENGINEERING CASE STUDY</p><span class="badge">갓 세이브 버밍엄 · 저널 시스템</span>
+                <p class="eyebrow">05 / JOURNAL</p><span class="badge">갓 세이브 버밍엄 · 저널 시스템</span>
                 <h2 id="journal-title">저널의 진행과 등록 상태,<br>목록과 연출을 연결했습니다.</h2>
                 <p class="lead journal-lead">FlowGraph로 진행 조건을 제어하고, 컴포넌트에서 등록 상태를 관리하며, ViewModel과 위젯으로 카테고리별 목록·읽음 표시·등록 연출을 제공하는 저널 시스템을 구현했습니다.</p>
                 <div id="journal-features" class="journal-feature-section">
@@ -283,7 +295,7 @@
                         <details id="journal-ui"><summary><span class="detail-number">04</span><span>카테고리 목록·선택·읽음 표시를 MVVM으로 연결<small>ViewModel · FieldNotify · 위젯 수명 관리</small></span></summary><div class="detail-body"><p>컴포넌트의 객체를 화면에서 직접 공유하지 않고, 전달된 데이터로 UI 전용 객체를 구성했습니다. ViewModel에서 메인·서브·생존 목록을 분류하고 중복 추가를 방지하며, 최신 등록 항목이 먼저 보이도록 목록을 제공했습니다.</p><ul><li>선택 항목과 마지막 선택 항목을 관리하고, 항목 선택 시 읽음 상태를 반영했습니다.</li><li>카테고리별 읽지 않은 항목의 존재 여부를 계산해 목록 아이콘과 함께 갱신했습니다.</li><li>FieldNotify로 목록·선택·읽음 상태의 변화를 위젯에 전달했습니다.</li><li>카테고리 전환 시 선택과 스크롤을 정리하고, 화면 생성·제거 주기에 맞춰 이벤트 연결과 데이터 정리를 수행했습니다.</li></ul></div></details>
                     </div>
                 </div>
-                <h3 class="journal-save-heading">별도 기술 사례: 세이브·로드와 재접속</h3>
+                <h3 class="journal-save-heading">세이브·로드와 재접속</h3>
                 <p class="journal-save-intro">저널 기능 구현에 더해 플러그인 실행 상태를 기존 저장 시스템에 통합하고, 복원된 상태와 신규 등록을 구분하는 흐름을 설계했습니다.</p>
                 <div class="journal-overview"><div><span class="micro-label">SAVE / LOAD</span><h3>게임 데이터 + 플러그인 실행 상태</h3><p>GameState / PlayerState의 저널 컴포넌트는 기존 객체 직렬화 경로에 통합하고, FlowGraph의 실행 상태는 별도 저장 섹션에 통합했습니다.</p></div><div><span class="micro-label">MULTIPLAYER</span><h3>초기 목록 + 신규 등록 판정</h3><p>서버가 확정한 개인 저널 초기 목록을 Client RPC로 전달하고, 복제와 RPC의 도착 순서에 관계없이 초기 목록을 확보한 뒤 연출 여부를 판정했습니다.</p></div></div>
                 <figure class="flow-figure"><figcaption><span>저장·복원 구조</span><small>게임 상태와 실행 상태의 저장 경로를 나눠 기존 파일에 통합</small></figcaption><div class="save-paths"><div><span class="flow-label">GAME DATA</span><strong>공유 / 개인 저널 컴포넌트</strong><small>GameState · PlayerState</small><span class="flow-arrow">↓</span><strong>기존 객체 직렬화 경로</strong><small>UPROPERTY(SaveGame) · 프로젝트 저장 인터페이스</small></div><div><span class="flow-label">FLOW STATE</span><strong>UFlowSaveGame</strong><small>원본 애셋 · 실행 인스턴스 · 플레이어 ID</small><span class="flow-arrow">↓</span><strong>메모리 바이너리</strong><small>TArray&lt;uint8&gt; → 플러그인 실행 상태 섹션</small></div></div><div class="save-file">FStructuredArchive <span>기존 세이브 파일</span></div><div class="restore-flow"><span>애셋 비동기 로딩</span><b>+</b><span>소유자 준비 상태</span><b>→</b><strong>진행 상태 복원 / Flow 실행</strong></div></figure>
