@@ -537,39 +537,47 @@ dd small
     color: var(--muted);
     font-size: 14px;
 }
-.skill-tools
+.project-tech-stack
 {
-    margin-top: 40px;
+    margin: 44px 0;
 }
-.skill-tools > h3
+.project-tech-stack > h3
 {
     margin-bottom: 18px;
-    font-size: 18px;
 }
-.skill-tool-grid
+.project-tech-groups
 {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
+    gap: 22px;
 }
-.skill-tool-grid > div
+.project-tech-groups h4
 {
-    padding-top: 17px;
-    border-top: 1px solid var(--border);
+    color: var(--subtle);
+    font-size: 13px;
+    font-weight: 600;
 }
-.skill-tool-grid h4
+.project-tech-groups ul
 {
-    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 9px 0 0;
+    padding: 0;
+    list-style: none;
 }
-.skill-tool-grid ul
+.project-tech-groups li
 {
-    margin: 10px 0 0;
-    padding-left: 17px;
+    max-width: 100%;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background: rgba(190, 168, 218, 0.12);
+    color: var(--ink);
     font-size: 14px;
+    line-height: 1.65;
 }
-.skill-tool-grid li + li
+.project-tech-groups li + li
 {
-    margin-top: 5px;
+    margin-top: 0;
 }
 .birmingham-summary
 {
@@ -1057,9 +1065,18 @@ summary small
 {
     margin-top: 40px;
 }
+.journal-feature-section > h3,
 .journal-save-heading
 {
-    margin-top: 50px;
+    font-size: clamp(24px, 1.7vw, 28px);
+}
+.journal .detail-heading > h4
+{
+    font-size: 20px;
+}
+.journal-save-heading
+{
+    margin-top: 82px;
     padding-top: 35px;
     border-top: 1px solid var(--border);
 }
@@ -1154,35 +1171,13 @@ summary small
     color: var(--accent);
     font-size: 23px;
 }
-.save-file
-{
-    padding: 13px;
-    margin-top: 17px;
-    border: 1px solid rgba(232, 166, 206, 0.35);
-    background: rgba(232, 166, 206, 0.08);
-    color: #eac9e2;
-    font-size: 15px;
-    text-align: center;
-}
-.save-file span
-{
-    margin-left: 16px;
-    font-size: 13px;
-}
 .restore-flow
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 13px;
-    padding-top: 24px;
-    font-size: 13px;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
     color: var(--muted);
-}
-.restore-flow b
-{
-    color: var(--accent);
 }
 .scope-note
 {
@@ -1810,11 +1805,6 @@ body.media-open
     {
         margin-top: 12px;
     }
-    .skill-tool-grid
-    {
-        grid-template-columns: 1fr;
-        gap: 22px;
-    }
     .skill-list article
     {
         grid-template-columns: 1fr;
@@ -1945,25 +1935,9 @@ body.media-open
     {
         font-size: 11px;
     }
-    .save-file
-    {
-        font-size: 13px;
-    }
-    .save-file span
-    {
-        display: block;
-        margin: 0;
-        font-size: 12px;
-    }
     .restore-flow
     {
-        gap: 7px;
-        font-size: 12px;
-    }
-    .restore-flow strong
-    {
-        flex-basis: 100%;
-        text-align: center;
+        font-size: 13px;
     }
     .tech-table
     {

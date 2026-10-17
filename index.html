@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://kimkyungjae1112.github.io/ProfilePage/images/GodSaveBirmingham/GodSaveBirmingham4.jpg">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css?v=74d3081b4844">
     <!-- 미완성 상호작용 데모: 스타일 연결 보류
     <link rel="stylesheet" href="assets/css/interaction-demo.css?v=9e9fc40fb37c">
     -->
@@ -32,7 +32,7 @@
             <a href="#intro" class="active" aria-current="location"><span>01</span> INTRO <small>소개</small></a>
             <a href="#skills"><span>02</span> SKILLS <small>업무 숙련도</small></a>
             <a href="#birmingham"><span>03</span> EXPERIENCE <small>갓 세이브 버밍엄</small></a>
-            <a href="#interaction"><span>04</span> INTERACTION <small>상호작용 설계와 연출</small></a>
+            <a href="#interaction"><span>04</span> INTERACTION <small>상호작용 연출</small></a>
             <a href="#journal"><span>05</span> JOURNAL <small>저널 기능 · 저장과 복원</small></a>
             <a href="#projects"><span>06</span> STUDENT WORKS <small>학생 시절 프로젝트</small></a>
             <a href="#activities"><span>07</span> ACTIVITIES <small>학생 시절 활동</small></a>
@@ -49,7 +49,7 @@
                         <p class="intro-name">김경재 <span>Kim Kyungjae</span></p>
                         <div class="intro-employer">
                             <img src="images/previews/ocean-drive-studio.png" width="184" height="184" alt="Ocean Drive Studio 로고">
-                            <p class="lead">OceanDriveStudio에서 1년 동안 근무 중인 언리얼 클라이언트 프로그래머입니다.</p>
+                            <p class="lead">OceanDriveStudio 에서 1년 동안 근무 중인 언리얼 클라이언트 프로그래머입니다.</p>
                         </div>
                         <p>오션드라이브 스튜디오의 <strong>갓 세이브 버밍엄</strong>에서 게임 콘텐츠와 UI, 멀티플레이 동기화, 에디터 툴을 개발하고 있습니다.</p>
                         <div class="actions">
@@ -75,7 +75,7 @@
                     <div><dt>주요 환경</dt><dd>Unreal Engine 5.5 · C++<small>Windows · Dedicated Server</small></dd></div>
                     <div><dt>학력</dt><dd>전남대학교 소프트웨어공학과<small>2026.02 졸업 · 3.9 / 4.5</small></dd></div>
                 </dl>
-                <div class="intro-footer"><p>팀이 같은 목표를 바라보도록 소통하고,<br class="mobile-break"> 익숙한 구현도 더 나은 구조로 발전시킵니다.</p><a href="#skills" class="text-link">개발 역량 보기 ↓</a></div>
+                <div class="intro-footer"><p>팀과 같은 목표를 바라볼 수 있도록 소통하고,<br class="mobile-break"> 함께 정한 방향을 실제 기능으로 구현합니다.</p><a href="#skills" class="text-link">개발 역량 보기 ↓</a></div>
             </div>
         </section>
         <section id="skills" class="section skills" aria-labelledby="skills-title">
@@ -87,21 +87,13 @@
                     <tbody>
                         <tr><th scope="row">C++ / 구조 설계</th><td><strong>공통 기능을 재사용하고, 의존성을 줄이는 구조를 설계합니다.</strong><p>컴포넌트 분리, 인터페이스와 델리게이트를 통한 연결, 데이터와 실행 로직의 분리</p></td></tr>
                         <tr><th scope="row">엔진 / 에디터</th><td><strong>데이터와 도구로 콘텐츠 제작을 지원합니다.</strong><p>Unreal Engine 5.5 · C++ / Blueprint · Data Asset / Table / Registry · Editor Utility Widget</p></td></tr>
-                        <tr><th scope="row">퍼포먼스 / 프로파일링</th><td><strong>측정으로 병목을 찾고 고친 뒤 같은 조건에서 다시 재서 확인합니다.</strong><p>Unreal Insights로 인벤토리 갱신 구간의 프레임 저하를 추적했습니다. Scroll Box에서 위젯 캐시가 초기화되고 다시 그려지며 발생하던 히치를 확인하고, List View로 전환해 해결했습니다.</p></td></tr>
+                        <tr><th scope="row">퍼포먼스 / 프로파일링</th><td><strong>측정으로 병목을 찾고 고친 뒤 같은 조건에서 다시 재서 확인합니다.</strong><p>Unreal Insights 기반 병목 추적 · 인벤토리 갱신 히치 분석 · Scroll Box에서 List View로 전환해 위젯 갱신 비용 개선</p></td></tr>
                         <tr><th scope="row">UI / 게임 플로우</th><td><strong>화면 흐름과 위젯의 수명, 데이터 갱신을 관리합니다.</strong><p>UMG · Slate / MoviePlayer · MVVM · 화면 계층과 입력 포커스 · 위젯 풀링과 이벤트 수명 관리</p></td></tr>
                         <tr><th scope="row">네트워크 / 상태 관리</th><td><strong>클라이언트 주도 로직으로 서버의 처리 비용을 줄입니다.</strong><p>Dedicated Server · Replication / RPC · 클라이언트 주도 처리 · 서버 처리 비용 절감</p></td></tr>
                         <tr><th scope="row">전투 / AI</th><td><strong>공격과 입력, 대상 상태를 연결해 전투 동작을 구현합니다.</strong><p>Behavior Tree · AI Perception · 공격 이벤트와 애니메이션 연결 · 데이터 기반 무기 · Motion Warping</p></td></tr>
                         <tr><th scope="row">협업 / 버전 관리</th><td><strong>팀의 기능 개발을 조율하고 변경 사항과 병합을 관리합니다.</strong><p>Perforce / Swarm 코드 리뷰 · Git 브랜치와 병합 관리 · 팀 프로젝트의 개발 범위·진행 상황 조율</p></td></tr>
                     </tbody>
                 </table>
-                <div class="skill-tools">
-                    <h3>사용 도구</h3>
-                    <div class="skill-tool-grid">
-                        <div><h4>언어 / 엔진</h4><ul><li>C++ · Blueprint</li><li>Unreal Engine 5.5</li><li>Windows 게임 개발</li></ul></div>
-                        <div><h4>플러그인 / UI</h4><ul><li>Gameplay Ability System · FlowGraph</li><li>UMG · MVVM</li><li>Slate · MoviePlayer</li></ul></div>
-                        <div><h4>협업 / 버전 관리</h4><ul><li>Perforce · Swarm · Git</li><li>Confluence · Jira · Teams</li><li>코드 리뷰 · 브랜치와 병합 관리</li></ul></div>
-                    </div>
-                </div>
             </div>
         </section>
         <section id="birmingham" class="section experience" aria-labelledby="birmingham-title">
@@ -124,6 +116,16 @@
                         <article><h3>추가 구현 / 버그 수정</h3><div><strong>게임플레이 기능을 추가하고 데디케이티드 서버의 동기화 오류를 수정했습니다.</strong><p>GAS 기반 주량 스킬과 화상 기능을 구현하고, 시설물의 애니메이션·상태가 클라이언트로 동기화되지 않던 문제를 해결했습니다.</p></div><a class="case-link" href="#additional-work">구현·버그 수정 ↗</a></article>
                     </div>
                 </div>
+                <section class="project-tech-stack" aria-labelledby="birmingham-tech-title">
+                    <h3 id="birmingham-tech-title">기술 스택</h3>
+                    <div class="project-tech-groups">
+                        <div><h4>엔진</h4><ul><li>Unreal Engine 5</li><li>UMG</li><li>Slate</li><li>MoviePlayer</li><li>MVVM</li><li>Data Asset</li><li>Data Table</li><li>Gameplay Tags</li><li>Subsystem</li><li>Replication / RPC</li><li>NavMesh</li><li>Asset Manager</li><li>Serialization</li><li>Editor Utility Widget</li><li>Unreal Insights</li></ul></div>
+                        <div><h4>언어 / 스크립트</h4><ul><li>C++</li><li>Blueprint</li></ul></div>
+                        <div><h4>플러그인</h4><ul><li>Gameplay Ability System</li><li>FlowGraph</li><li>Data Registry</li><li>Motion Warping</li></ul></div>
+                        <div><h4>버전 관리 / 리뷰</h4><ul><li>Perforce</li><li>Swarm</li><li>코드 리뷰</li></ul></div>
+                        <div><h4>협업</h4><ul><li>Confluence</li><li>Jira</li><li>Teams</li></ul></div>
+                    </div>
+                </section>
                 <div class="detail-heading"><h3>구현 상세</h3><button class="text-button" data-expand-group="experience-details" aria-expanded="false">모두 펼치기 +</button></div>
                 <div id="experience-details" class="detail-list">
                     <details id="guide-interaction">
@@ -131,9 +133,9 @@
                         <div class="detail-body">
                             <p>상황에 맞는 몽타주를 선택하고, 자동 접근 후 모션 워핑과 상체 틸트로 실제 대상 위치에 맞추는 상호작용 실행 구조를 구현했습니다.</p>
                             <h4>데이터 기반 구성과 공통 실행</h4>
-                            <p>대상에 부착하는 컴포넌트로 행위별 위치·방향과 연출 설정을 구성했습니다. 행위별 로직은 실행 데이터를 전달하고, 공통 계층은 접근·선행 동작·몽타주 재생·자세 보정을 처리해 콘텐츠의 차이와 공통 동작을 분리했습니다.</p>
+                            <p>대상에 부착하는 컴포넌트로 상호작용별 위치·방향과 연출 설정을 구성했습니다. 상호작용 베이스 클래스에는 대상·도구 조회와 몽타주 선택 등 공통 기능을 모으고, 파생 클래스에는 각 상호작용의 데이터 구성과 결과 처리를 구현했습니다. 자동 접근·선행 동작·몽타주 재생·자세 보정은 별도의 공통 실행 계층에서 처리합니다.</p>
                             <h4>상황별 몽타주 선택</h4>
-                            <p>도구·대상·행위의 태그와 캐릭터 자세, 조작점의 상대 높이로 후보를 좁혔습니다. 우선순위와 높이 조건으로 모션을 선택하고, 직접 지정한 동작이나 자동 매칭 실패 시의 대체 모션도 지원했습니다.</p>
+                            <p>도구·대상·상호작용의 태그와 캐릭터 자세, 조작점의 상대 높이로 후보를 좁혔습니다. 우선순위와 높이 조건으로 모션을 선택하고, 직접 지정한 동작이나 자동 매칭 실패 시의 대체 모션도 지원했습니다.</p>
                             <h4>자동 접근과 모션 워핑</h4>
                             <p>가장 가까운 유효 실행 지점을 고르고, 두 목적지 후보를 NavMesh에 투영해 이동 가능한 위치로 접근하도록 구성했습니다. 동작을 시작할 접근 범위와 몽타주의 워핑 목표를 나누고, 도착·진행 실패를 판정한 뒤 연출을 실행했습니다.</p>
                             <h4>상체 틸트와 디버깅</h4>
@@ -202,7 +204,7 @@
         <section id="interaction" class="section interaction-case" aria-labelledby="interaction-title">
             <div class="inner">
                 <p class="eyebrow">04 / INTERACTION</p><span class="badge">갓 세이브 버밍엄 · 상호작용 시스템</span>
-                <h2 id="interaction-title">상황에 맞는 동작을 고르고,<br>실제 대상 위치에 맞췄습니다.</h2>
+                <h2 id="interaction-title">데이터 기반 상호작용 연출 시스템 구현</h2>
                 <p class="lead case-lead">상호작용 대상마다 시작 위치, 조작점의 높이와 재생할 동작이 달랐습니다. 대상 액터에 부착하는 컴포넌트로 위치·연출 데이터를 모듈화하고, 상황에 맞는 몽타주 선택 → 자동 접근 → 모션 워핑과 상체 틸트 보정으로 이어지는 실행 구조를 구성했습니다.</p>
                 <ol class="game-flow-steps" aria-label="상호작용 실행 흐름">
                     <li><span>01</span><strong>상호작용 지점 선택</strong><small>상호작용 유형 · 가까운 지점</small></li>
@@ -311,29 +313,29 @@
                     </div>
                 </figure>
                 -->
-                <div class="detail-heading"><h3>상호작용 설계와 구현</h3><button class="text-button" data-expand-group="interaction-details" aria-expanded="false">모두 펼치기 +</button></div>
+                <div class="detail-heading"><h3>상호작용 연출 구현</h3><button class="text-button" data-expand-group="interaction-details" aria-expanded="false">모두 펼치기 +</button></div>
                 <div id="interaction-details" class="detail-list">
                     <details id="interaction-execution" open>
-                        <summary><span class="detail-number">01</span><span>행위별 데이터와 공통 실행 경로 분리<small>컴포넌트 · 데이터 기반 구성 · 재사용</small></span></summary>
+                        <summary><span class="detail-number">01</span><span>상호작용 베이스 클래스와 파생 클래스의 역할 분리<small>베이스 / 파생 클래스 · 공통 실행</small></span></summary>
                         <div class="detail-body">
-                            <h4>공통 실행과 행위별 로직 분리</h4>
-                            <p>행위별 어빌리티는 대상과 도구 등 실행에 필요한 데이터를 구성하고 실제 행위를 처리하도록 분리했습니다. 공통 실행 계층은 선택된 몽타주와 계산된 위치·방향을 받아 자동 접근, 선행 동작, 몽타주 재생과 자세 보정을 담당합니다.</p>
-                            <p>실행할 행위와 몽타주, 시간, 접근·틸트 설정을 데이터로 구성해 콘텐츠의 선택 규칙과 공통 실행 경로를 분리했습니다.</p>
+                            <h4>상호작용의 공통 기능과 개별 처리 분리</h4>
+                            <p>상호작용 베이스 클래스에 대상·도구 조회와 몽타주 선택 등 반복되는 데이터 구성 기능을 모았습니다. 이를 상속한 파생 클래스는 채집·획득·문 열기처럼 각 상호작용에 필요한 데이터를 구성하고 결과를 처리합니다.</p>
+                            <p>자동 접근, 선행 동작, 몽타주 재생과 자세 보정은 별도의 공통 실행 계층에서 순서대로 처리합니다. 파생 클래스가 전달한 몽타주·시간·접근·틸트 설정을 사용하므로, 새로운 상호작용을 추가할 때 실행 흐름을 반복해서 구현하지 않도록 구성했습니다.</p>
                             <h4>데이터로 설정하는 상호작용 위치와 방향</h4>
-                            <p>게임 오브젝트에 상호작용 지점 컴포넌트를 여러 개 부착하고, 행위별 실행 위치와 방향을 설정할 수 있도록 구성했습니다. 해당 행위에 사용할 수 있는 지점 중 캐릭터와 수평 거리가 가장 가까운 지점을 선택하고, 별도 지점이 없으면 기본 위치를 사용하는 경로를 둡니다.</p>
-                            <p>접근 거리와 도착 여유 범위, 몽타주의 워핑 목표 거리를 독립적으로 조정할 수 있게 해 콘텐츠 담당자가 오브젝트 배치와 행위 특성에 맞춰 연출을 설정하도록 했습니다.</p>
+                            <p>게임 오브젝트에 상호작용 지점 컴포넌트를 여러 개 부착하고, 상호작용별 실행 위치와 방향을 설정할 수 있도록 구성했습니다. 해당 상호작용에 사용할 수 있는 지점 중 캐릭터와 수평 거리가 가장 가까운 지점을 선택하고, 별도 지점이 없으면 기본 위치를 사용하는 경로를 둡니다.</p>
+                            <p>접근 거리와 도착 여유 범위, 몽타주의 워핑 목표 거리를 독립적으로 조정할 수 있게 해 콘텐츠 담당자가 오브젝트 배치와 상호작용 특성에 맞춰 연출을 설정하도록 했습니다.</p>
                         </div>
                     </details>
                     <details id="interaction-motion">
                         <summary><span class="detail-number">02</span><span>태그·자세·높이 기반 몽타주 선택<small>GameplayTag · 우선순위 · 상대 높이</small></span></summary>
                         <div class="detail-body">
                             <ul>
-                                <li>도구·대상·행위의 추가 태그와 서기·앉기 자세로 모션 후보를 필터링합니다. 태그는 정확히 일치하는 조건으로 비교하며, 비워 둔 조건은 검사하지 않습니다.</li>
+                                <li>도구·대상·상호작용의 추가 태그와 서기·앉기 자세로 모션 후보를 필터링합니다. 태그는 정확히 일치하는 조건으로 비교하며, 비워 둔 조건은 검사하지 않습니다.</li>
                                 <li>대상의 조작점과 캐릭터 발바닥 사이의 상대 높이로 모션을 선택합니다. 조작점이 없으면 대상의 기준 위치를 사용합니다.</li>
                                 <li>우선순위가 높은 후보를 먼저 선택하고, 같은 우선순위에서는 대상 높이를 수용하는 가장 작은 높이 상한을 선택합니다. 두 조건이 같으면 무작위 선택으로 동작을 분산합니다.</li>
                                 <li>직접 지정한 몽타주를 우선 사용하고, 자동 매칭에 실패하면 대체 모션을 사용하도록 구성했습니다.</li>
                             </ul>
-                            <p>채집은 인벤토리의 도구 보유 여부와 대상의 채집 유형으로 별도 모션을 선택합니다. 문·창문처럼 대상에서 방향별 애니메이션을 제공하는 경우도 지원해 행위의 특성에 맞게 선택 경로를 구성했습니다.</p>
+                            <p>채집은 인벤토리의 도구 보유 여부와 대상의 채집 유형으로 별도 모션을 선택합니다. 문·창문처럼 대상에서 방향별 애니메이션을 제공하는 경우도 지원해 상호작용의 특성에 맞게 선택 경로를 구성했습니다.</p>
                         </div>
                     </details>
                     <details id="interaction-approach">
@@ -343,7 +345,7 @@
                             <p>기본 접근 경계는 접근 거리와 도착 여유 범위를 더해 계산합니다. 캐릭터가 경계 안에 있으면 자동 이동을 생략하고, 밖에 있으면 접근을 실행합니다. 몽타주가 시작된 뒤에는 별도로 설정한 워핑 목표 거리로 위치를 정렬합니다.</p>
                             <h4>이동 가능한 목적지를 선택하고 접근 결과 판정</h4>
                             <ol class="premove-sequence">
-                                <li><strong>가장 가까운 유효 지점 선택</strong><p>시도한 행위에 연결된 실행 지점 중 캐릭터와 수평 거리가 가장 가까운 곳을 선택합니다.</p></li>
+                                <li><strong>가장 가까운 유효 지점 선택</strong><p>시도한 상호작용에 연결된 실행 지점 중 캐릭터와 수평 거리가 가장 가까운 곳을 선택합니다.</p></li>
                                 <li><strong>두 목적지 후보 계산</strong><p>실행 지점에서 캐릭터 방향으로 접근 거리만큼 떨어진 위치와 실행 지점 자체를 각각 NavMesh에 투영합니다. 투영된 두 위치 중 캐릭터와 직선 수평 거리가 짧은 쪽을 선택합니다.</p></li>
                                 <li><strong>경계 밖에서만 자동 접근</strong><p>접근 경계 밖에 있는 캐릭터를 선택한 목적지로 이동시킵니다. 후보가 벽이나 난간 밖에 놓여 투영 결과가 멀어지면 다른 후보를 사용할 수 있도록 구성했습니다.</p></li>
                                 <li><strong>도착 범위에 들어온 뒤 연출 시작</strong><p>목적지 좌표와의 정확한 일치보다 실행 지점의 도착 범위 진입을 기준으로 판정합니다. 이후 선행 동작과 본 동작을 순서대로 실행하고, 몽타주의 워핑 구간에서 목표 위치로 정렬합니다.</p></li>
@@ -372,7 +374,7 @@
         <section id="journal" class="section journal" aria-labelledby="journal-title">
             <div class="inner">
                 <p class="eyebrow">05 / JOURNAL</p><span class="badge">갓 세이브 버밍엄 · 저널 시스템</span>
-                <h2 id="journal-title">저널의 진행과 등록 상태,<br>목록과 연출을 연결했습니다.</h2>
+                <h2 id="journal-title">저널 기능과 세이브/로드 구현</h2>
                 <p class="lead journal-lead">FlowGraph로 진행 조건을 제어하고, 컴포넌트에서 등록 상태를 관리하며, ViewModel과 위젯으로 카테고리별 목록·읽음 표시·등록 연출을 제공하는 저널 시스템을 구현했습니다.</p>
                 <div id="journal-features" class="journal-feature-section">
                     <h3>저널 기능 구현</h3>
@@ -383,7 +385,7 @@
                         <li><span>04</span><strong>목록과 연출</strong><small>위젯 · 등록 알림 · 연출 큐</small></li>
                     </ol>
                     <div class="journal-overview"><div><span class="micro-label">SHARED JOURNAL</span><h3>모두가 함께 보는 메인·서브 저널</h3><p>GameState에서 공유 등록 상태를 관리하고 모든 클라이언트에 복제했습니다.</p></div><div><span class="micro-label">PERSONAL JOURNAL</span><h3>플레이어별로 관리하는 생존 저널</h3><p>PlayerState에서 개인 등록 상태를 관리하고 소유 클라이언트에만 복제했습니다.</p></div></div>
-                    <div class="detail-heading"><h3>기능별 설계와 구현</h3><button class="text-button" data-expand-group="journal-feature-details" aria-expanded="false">모두 펼치기 +</button></div>
+                    <div class="detail-heading"><h4>저널 기능의 상세 구현</h4><button class="text-button" data-expand-group="journal-feature-details" aria-expanded="false">모두 펼치기 +</button></div>
                     <div id="journal-feature-details" class="detail-list">
                         <details id="journal-progression" open><summary><span class="detail-number">01</span><span>진행 조건과 저널 데이터를 분리<small>FlowGraph · Data Registry · 데이터 기반 콘텐츠</small></span></summary><div class="detail-body"><p>카테고리·제목·본문·독백은 정적 데이터로 정의하고, 등록 상태와 읽음 여부는 실행 데이터로 분리했습니다. 초기화할 때 각 컴포넌트가 담당하는 카테고리의 저널 객체를 만들고 잠긴 상태로 시작하도록 구성했습니다.</p><p>저널 컴포넌트는 잠김·열림의 등록 상태를 관리하고 이후 진행 조건은 Flow 그래프에서 처리합니다. 게임 이벤트와 커스텀 Flow 노드를 연결해 기획자가 조건과 콘텐츠를 직접 수정할 수 있게 했습니다.</p></div></details>
                         <details id="journal-registration"><summary><span class="detail-number">02</span><span>서버 권한 등록과 공유·개인 상태 동기화<small>Replication · 중복 반영 방지 · 소유자 전용 복제</small></span></summary><div class="detail-body"><p>Flow의 등록 요청을 실행 주체에 따라 공유 또는 개인 저널 컴포넌트로 전달했습니다. 서버에서 초기화 준비와 중복 등록 여부를 확인한 뒤 상태를 변경하고, 클라이언트에는 갱신된 등록 목록을 복제했습니다.</p><p>서버가 관리하는 원본과 네트워크 전달 목록을 분리하고, 초기화와 상태 반영이 공통 경로를 거치도록 구성했습니다. 이미 적용한 저널을 기록해 전체 목록이 반복 전달되더라도 중복 반영하지 않도록 했습니다.</p><p>공유·개인 저널의 카테고리와 복제 범위는 상속과 가상함수로 분리하고, 등록·초기화·목록 적용은 공통 컴포넌트에 유지했습니다.</p></div></details>
@@ -393,13 +395,13 @@
                 </div>
                 <h3 class="journal-save-heading">세이브·로드와 재접속</h3>
                 <p class="journal-save-intro">저널 기능 구현에 더해 플러그인 실행 상태를 기존 저장 시스템에 통합하고, 복원된 상태와 신규 등록을 구분하는 흐름을 설계했습니다.</p>
-                <div class="journal-overview"><div><span class="micro-label">SAVE / LOAD</span><h3>게임 데이터 + 플러그인 실행 상태</h3><p>GameState / PlayerState의 저널 컴포넌트는 기존 객체 직렬화 경로에 통합하고, FlowGraph의 실행 상태는 별도 저장 섹션에 통합했습니다.</p></div><div><span class="micro-label">MULTIPLAYER</span><h3>초기 목록 + 신규 등록 판정</h3><p>서버가 확정한 개인 저널 초기 목록을 Client RPC로 전달하고, 복제와 RPC의 도착 순서에 관계없이 초기 목록을 확보한 뒤 연출 여부를 판정했습니다.</p></div></div>
-                <figure class="flow-figure"><figcaption><span>저장·복원 구조</span><small>게임 상태와 실행 상태의 저장 경로를 나눠 기존 파일에 통합</small></figcaption><div class="save-paths"><div><span class="flow-label">GAME DATA</span><strong>공유 / 개인 저널 컴포넌트</strong><small>GameState · PlayerState</small><span class="flow-arrow">↓</span><strong>기존 객체 직렬화 경로</strong><small>UPROPERTY(SaveGame) · 프로젝트 저장 인터페이스</small></div><div><span class="flow-label">FLOW STATE</span><strong>UFlowSaveGame</strong><small>원본 애셋 · 실행 인스턴스 · 플레이어 ID</small><span class="flow-arrow">↓</span><strong>메모리 바이너리</strong><small>TArray&lt;uint8&gt; → 플러그인 실행 상태 섹션</small></div></div><div class="save-file">FStructuredArchive <span>기존 세이브 파일</span></div><div class="restore-flow"><span>애셋 비동기 로딩</span><b>+</b><span>소유자 준비 상태</span><b>→</b><strong>진행 상태 복원 / Flow 실행</strong></div></figure>
-                <div class="detail-heading"><h3>문제에서 구현까지</h3><button class="text-button" data-expand-group="journal-details" aria-expanded="false">모두 펼치기 +</button></div>
+                <div class="journal-overview"><div><span class="micro-label">SAVE / LOAD</span><h3>게임 데이터 + 플러그인 실행 상태</h3><p>GameState / PlayerState의 저널 컴포넌트는 기존 객체 직렬화 경로에 통합하고, FlowGraph의 실행 상태는 별도 저장 섹션에 통합했습니다.</p></div><div><span class="micro-label">MULTIPLAYER</span><h3>클라이언트별 초기 저널 등록</h3><p>서버에서 직렬화를 마친 개인 저널 초기 목록을 Client RPC로 전달해, 플레이어별로 저장된 저널 상태를 클라이언트에 반영했습니다.</p></div></div>
+                <figure class="flow-figure"><figcaption><span>저장·복원 구조</span><small>게임 상태와 실행 상태의 저장 경로를 나눠 기존 파일에 통합</small></figcaption><div class="save-paths"><div><span class="flow-label">GAME DATA</span><strong>공유 / 개인 저널 컴포넌트</strong><small>GameState · PlayerState</small><span class="flow-arrow">↓</span><strong>기존 객체 직렬화 경로</strong><small>UPROPERTY(SaveGame) · 프로젝트 저장 인터페이스</small></div><div><span class="flow-label">FLOW STATE</span><strong>UFlowSaveGame</strong><small>원본 애셋 · 실행 인스턴스 · 플레이어 ID</small><span class="flow-arrow">↓</span><strong>메모리 바이너리</strong><small>TArray&lt;uint8&gt; → 플러그인 실행 상태 섹션</small></div></div><p class="restore-flow">원본 Flow 애셋의 비동기 로딩과 소유자 준비가 모두 완료된 뒤, 저장된 진행 상태를 복원하고 Flow를 실행합니다.</p></figure>
+                <div class="detail-heading"><h4>세이브·로드와 재접속 상세 구현</h4><button class="text-button" data-expand-group="journal-details" aria-expanded="false">모두 펼치기 +</button></div>
                 <div id="journal-details" class="detail-list">
-                    <details id="journal-save" open><summary><span class="detail-number">01</span><span>기존 저장 시스템에 Flow 실행 상태 통합<small>FStructuredArchive · UFlowSaveGame · 메모리 직렬화</small></span></summary><div class="detail-body"><p>Unreal Engine C++ 기반으로 저널의 세이브·로드를 설계하고 구현했습니다. GameState의 공유 저널과 PlayerState의 개인 저널 컴포넌트는 기존 직렬화 경로를 활용하고, 플러그인의 진행 상태는 별도 저장 섹션으로 분리했습니다.</p><ul><li>FlowGraph의 UFlowSaveGame을 메모리 바이너리로 변환해 기존 세이브 파일에 저장했습니다.</li><li>FSoftObjectPath와 TMap으로 원본 애셋 경로와 실행 인스턴스 이름을 연결했습니다.</li><li>개인 저널은 플레이어 ID로 구분해 각 플레이어의 진행 상태를 복원하도록 구성했습니다.</li></ul></div></details>
+                    <details id="journal-save" open><summary><span class="detail-number">01</span><span>기존 저장 시스템에 Flow 실행 상태 통합<small>FStructuredArchive · UFlowSaveGame · 메모리 직렬화</small></span></summary><div class="detail-body"><p>Unreal Engine C++ 기반으로 저널의 세이브·로드를 설계하고 구현했습니다. GameState의 공유 저널과 PlayerState의 개인 저널 컴포넌트는 기존 직렬화 경로를 활용하고, 플러그인의 진행 상태는 별도 저장 섹션으로 분리했습니다.</p><ul><li>FlowGraph의 UFlowSaveGame을 메모리 바이너리로 변환해  세이브 파일에 저장했습니다.</li><li>FSoftObjectPath와 TMap으로 원본 애셋 경로와 실행 인스턴스 이름을 연결했습니다.</li><li>개인 저널은 플레이어 ID로 구분해 각 플레이어의 진행 상태를 복원하도록 구성했습니다.</li></ul></div></details>
                     <details id="journal-restore"><summary><span class="detail-number">02</span><span>애셋과 소유자 준비 이후에 실행 상태 복원<small>AssetManager · 비동기 로딩 · 소유자 준비 상태</small></span></summary><div class="detail-body"><p>저장 데이터를 읽는 시점과 Flow를 실행할 수 있는 시점을 분리했습니다. 로드 시 원본 Flow 애셋의 비동기 로딩 완료와 소유자 준비 상태를 함께 확인해 실행 시점을 제어했습니다.</p><p>애셋 경로, 실행 인스턴스와 플레이어별 저장 데이터를 연결해 복원 대상과 실행 주체가 준비된 이후 진행 상태를 적용하도록 구현했습니다.</p></div></details>
-                    <details id="journal-analysis"><summary><span class="detail-number">03</span><span>바이너리 분석으로 저장 구조 불일치 추적<small>구간별 시간 측정 · 저장 섹션 · 읽기 순서</small></span></summary><div class="detail-body"><h4>문제</h4><p>저장 데이터 구조와 읽기 순서가 일치하지 않아 로딩 지연이 발생했습니다.</p><h4>분석과 개선</h4><p>구간별 시간을 측정하고 바이너리 데이터를 분석해, 누락된 저장 섹션으로 인해 이후 데이터를 잘못 해석하는 지점을 확인했습니다. 저널 데이터가 없는 경우에도 저장 구조를 유지하도록 개선했습니다.</p><p>데이터의 유무와 저장 포맷의 구조를 분리하고, 쓰기와 읽기 경로가 동일한 섹션 순서를 유지하도록 다뤘습니다.</p></div></details>
+                    <details id="journal-analysis"><summary><span class="detail-number">03</span><span>바이너리 분석으로 저장 구조 불일치 추적<small>구간별 시간 측정 · 저장 섹션 · 읽기 순서</small></span></summary><div class="detail-body"><h4>문제</h4><p>저장 데이터 구조와 읽기 순서가 일치하지 않아 로딩 지연이 발생했습니다.</p><h4>분석과 개선</h4><p>구간별 시간을 측정하고 바이너리 데이터를 분석해, 누락된 저장 섹션으로 인해 이후 데이터를 잘못 해석하는 지점을 확인했습니다. 저널 데이터가 없는 경우에도 저장 구조를 유지하도록 개선했습니다.</p></div></details>
                 </div>
 
             </div>
@@ -416,7 +418,7 @@
                         <figure><button class="media-button" data-media="images/BlackSpace_GIF/InventoryUI.gif" data-title="Black Space · 인벤토리" aria-label="Black Space 인벤토리 움직임 보기"><img src="images/previews/blackspace-inventory.webp" width="426" height="240" alt="Black Space 인벤토리 화면" loading="eager"><span class="play-mark">▶</span></button><figcaption>인벤토리와 장비 교체</figcaption></figure>
                     </div>
                     <div class="project-description"><h4>전투와 AI가 공유하는 컴포넌트 구조</h4><ul><li>무기별 애니메이션을 Data Asset에 분리하고, 에디터에서 데이터를 교체해 무기 종류를 확장했습니다.</li><li>공격 AnimNotify와 Delegate를 연결해 적 AI가 플레이어 공격에 회피·방어·반격으로 대응하도록 구현했습니다.</li><li>전투, 상태, 체력과 회전 처리를 컴포넌트로 분리하고 Interface로 접근해 플레이어와 AI가 공통 기능을 재사용하도록 설계했습니다.</li></ul></div>
-                    <details class="project-reflection"><summary>객체 풀링에서 배운 리소스 관리</summary><div class="detail-body"><p>인벤토리 슬롯에 무기 인스턴스를 보관해 교체 때 반복되는 생성·파괴를 줄였습니다. 다만 슬롯이 많거나 교체가 드물면 메모리 사용이 늘고, Visibility만 변경해서는 Tick과 Collision 비용까지 차단되지 않는 한계를 확인했습니다.</p><p>다음 구현에서는 풀의 동적 확장·축소와 Tick / Collision 명시적 제어를 적용하고, 프로파일링으로 재사용의 이득과 유지 비용을 비교할 계획입니다.</p></div></details>
+                    <details class="project-reflection"><summary>객체 풀링에서 배운 리소스 관리</summary><div class="detail-body"><p>인벤토리 슬롯에 무기 인스턴스를 보관해 교체 때 반복되는 생성·파괴를 줄였습니다. 다만 슬롯이 많거나 교체가 드물면 메모리 사용이 늘고, Visibility만 변경해서는 Tick과 Collision 비용까지 차단되지 않는 한계를 확인했습니다.</p><p>다음 구현에서는 풀의 동적 확장·축소와 Tick / Collision 명시적 제어를 적용하고, 프로파일링으로 재사용의 이득과 유지 비용을 비교해보는 것이 중요하겠다고 생각했습니다.</p></div></details>
                     <div class="actions"><a class="button" href="https://github.com/kimkyungjae1112/BlackSpace" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a><a class="button" href="https://youtu.be/vjcz6WjcW7I" target="_blank" rel="noopener noreferrer">시연 영상 <span>↗</span></a></div>
                 </article>
                 <article id="zero-sector" class="student-project">
@@ -440,7 +442,7 @@
                         <figure><button class="media-button" data-media="images/No-Face_GIF/Boss_Battle.gif" data-title="No-Face · 보스 전투" aria-label="No-Face 보스 전투 움직임 보기"><img src="images/previews/noface-boss.webp" width="460" height="240" alt="No-Face 보스 전투 화면" loading="eager"><span class="play-mark">▶</span></button><figcaption>보스 전투</figcaption></figure>
                     </div>
                     <div class="project-description"><h4>준비와 실행을 분리한 지역 타겟팅 스킬</h4><p class="responsibility">담당 범위: 팀장 · Git 프로젝트 관리 · PCG 맵 생성 알고리즘을 제외한 게임 요소의 C++ 개발</p><ul><li>TFunction과 람다로 스킬 동작을 감싸 TQueue에 보관하고, 타겟팅 준비 후 공격 입력에 맞춰 실행했습니다.</li><li>Motion Warping으로 자연스러운 회피 이동을 구현하고, 무기 타입에 따라 애니메이션과 이동 속도를 변경했습니다.</li><li>팀의 진행 상황과 의견을 조율하고 Git 기반으로 협업하며 프로젝트를 완성했습니다.</li></ul></div>
-                    <details class="project-reflection"><summary>스킬 시스템의 확장성에 대한 회고</summary><div class="detail-body"><p>스킬을 함수로 구현하면서 기능이 늘수록 코드가 커지고 수정 복잡도가 증가하는 한계를 확인했습니다. 후속 설계에서는 공통 실행과 큐 처리를 담당하는 범용 구조를 두고, 데미지·범위·이펙트를 데이터로 분리하는 방향을 고려했습니다.</p></div></details>
+                    <details class="project-reflection"><summary>스킬 시스템의 확장성에 대한 회고</summary><div class="detail-body"><p>스킬을 함수로 구현하면서 기능이 늘수록 코드가 커지고 수정 복잡도가 증가하는 한계를 확인했습니다. 후속 설계에서는 공통 실행과 큐 처리를 담당하는 범용 구조를 두고, 데미지·범위·이펙트를 데이터로 분리하는 방향이 좋을 것 같다는 생각을 하였습니다.</p></div></details>
                     <div class="actions"><a class="button" href="https://github.com/kimkyungjae1112/No-Face" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a><a class="button" href="https://youtu.be/4CyI_gF_lA0" target="_blank" rel="noopener noreferrer">시연 영상 <span>↗</span></a></div>
                 </article>
             </div>
