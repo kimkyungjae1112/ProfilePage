@@ -930,6 +930,83 @@ summary small
     border-radius: 5px;
     background: #211b31;
 }
+.interaction-step-buttons
+{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin: 20px 0 12px;
+}
+.interaction-step-buttons button
+{
+    --step-color: #e8a6ce;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    min-height: 76px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--muted);
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+.interaction-step-buttons button:nth-child(2)
+{
+    --step-color: #80a8ff;
+}
+.interaction-step-buttons button:nth-child(3)
+{
+    --step-color: #bc93ff;
+}
+.interaction-step-buttons button:nth-child(4)
+{
+    --step-color: #68d3b0;
+}
+.interaction-step-buttons button span
+{
+    color: var(--step-color);
+    font-size: 12px;
+}
+.interaction-step-buttons button[aria-pressed="true"],
+.interaction-step-buttons button:hover
+{
+    border-color: var(--step-color);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--ink);
+}
+.interaction-step-buttons button:focus-visible
+{
+    outline: 2px solid var(--step-color);
+    outline-offset: 3px;
+}
+.interaction-video-description
+{
+    min-height: 2em;
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+.interaction-video-status
+{
+    color: var(--accent);
+    font-size: 13px;
+}
+.interaction-video-status:empty
+{
+    display: none;
+}
+@media (max-width: 600px)
+{
+    .interaction-step-buttons
+    {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 .interaction-video > .text-link
 {
     font-size: 13px;
