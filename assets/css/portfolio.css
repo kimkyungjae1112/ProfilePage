@@ -902,6 +902,38 @@ summary small
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+.interaction-video
+{
+    margin: 26px 0;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: rgba(21, 14, 31, 0.3);
+}
+.interaction-video figcaption strong
+{
+    font-size: 17px;
+}
+.interaction-video figcaption small
+{
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 13px;
+}
+.interaction-video video
+{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 18px 0 14px;
+    border-radius: 5px;
+    background: #211b31;
+}
+.interaction-video > .text-link
+{
+    font-size: 13px;
+}
 .interaction-visual
 {
     margin: 24px 0;
@@ -1881,6 +1913,10 @@ body.media-open
         transform: translateX(-50%);
     }
     .interaction-visual
+    {
+        padding: 16px 12px;
+    }
+    .interaction-video
     {
         padding: 16px 12px;
     }
