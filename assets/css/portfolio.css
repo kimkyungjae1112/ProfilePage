@@ -308,12 +308,6 @@ main
     align-items: center;
     gap: 7%;
 }
-.role
-{
-    margin-top: 18px;
-    color: #e6d7f6;
-    font-size: 17px;
-}
 h1 span
 {
     color: #e3b6e5;
@@ -343,6 +337,24 @@ h1 span
 {
     margin: 18px 0 16px;
     font-size: 19px;
+}
+.intro-employer
+{
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+    margin: 18px 0 16px;
+}
+.intro-employer img
+{
+    width: 72px;
+    height: 72px;
+    border-radius: 4px;
+}
+.intro-employer .lead
+{
+    margin: 0;
 }
 .intro-copy > p:last-of-type
 {
@@ -1650,11 +1662,6 @@ body.media-open
     {
         font-size: calc(clamp(23px, 7vw, 36px) + 2px);
     }
-    .role
-    {
-        font-size: 14px;
-        margin-top: 16px;
-    }
     .intro-name
     {
         margin-top: 20px;
@@ -1662,6 +1669,16 @@ body.media-open
     .intro-copy .lead
     {
         font-size: 18px;
+    }
+    .intro-employer
+    {
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 12px;
+    }
+    .intro-employer img
+    {
+        width: 56px;
+        height: 56px;
     }
     .portrait
     {
