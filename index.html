@@ -51,7 +51,7 @@
                             <img src="images/previews/ocean-drive-studio.png" width="184" height="184" alt="Ocean Drive Studio 로고">
                             <p class="lead">OceanDriveStudio 에서 1년 동안 근무 중인 언리얼 클라이언트 프로그래머입니다.</p>
                         </div>
-                        <p>오션드라이브 스튜디오의 <strong>갓 세이브 버밍엄</strong>에서 게임 콘텐츠와 UI, 멀티플레이 동기화, 에디터 툴을 개발하고 있습니다.</p>
+                        <p>오션드라이브 스튜디오의 <strong>갓 세이브 버밍엄</strong>에서 게임 콘텐츠와 UI, 멀티플레이 동기화, 에디터 툴 등을 개발하고 있습니다.</p>
                         <div class="actions">
                             <a class="button primary" href="#birmingham">경력 살펴보기 <span>↓</span></a>
                             <a class="button" href="https://drive.google.com/file/d/1B0HmXaA_A-X_HAlvrbbaSpHs-gDFpVxJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">이력서 PDF <span>↗</span></a>
@@ -108,9 +108,9 @@
                 <div id="birmingham-summary" class="birmingham-summary">
                     <h3>담당 구현 요약</h3>
                     <div class="skill-list">
-                        <article><h3>상호작용 연출</h3><div><strong>상황별 동작 선택부터 접근·위치·자세 보정까지 연결했습니다.</strong><p>대상별 실행 지점과 몽타주 데이터를 구성하고, 자동 접근·모션 워핑·상체 틸트를 공통 실행 경로로 처리했습니다.</p></div><a class="case-link" href="#guide-interaction">상호작용 설계 ↗</a></article>
-                        <article><h3>저널 기능</h3><div><strong>진행 조건과 등록 상태를 나누고, 목록·읽음 표시·연출을 연결했습니다.</strong><p>FlowGraph로 저널의 진행 조건을 제어하고, 공유 저널은 GameState에서 전체 플레이어에게, 개인 저널은 PlayerState에서 해당 플레이어에게 동기화되도록 구현했습니다.</p></div><a class="case-link" href="#guide-journal">저널 기능 ↗</a></article>
-                        <article><h3>게임 플로우 / UI</h3><div><strong>타이틀·로딩·인게임·종료를 하나의 화면 관리 구조로 연결했습니다.</strong><p>데이터 기반 UI 매니저로 화면 계층·입력 포커스·위젯 재사용을 관리하고, Slate와 MoviePlayer로 로딩 연출을 구현했습니다.</p></div><a class="case-link" href="#ui-manager">게임 플로우 / UI ↗</a></article>
+                        <article><h3>상호작용 연출</h3><div><strong>상호작용의 상황별 몽타주 선택부터 접근·위치·자세 보정까지 구현하였습니다.</strong><p>대상별 상호작용 지점과 몽타주 데이터를 구성하고, 자동 접근·모션 워핑·상체 틸트를 공통 실행 경로로 처리했습니다.</p></div><a class="case-link" href="#guide-interaction">상호작용 설계 ↗</a></article>
+                        <article><h3>저널 기능</h3><div><strong>저널의 등록과 연출 세이브/로드 기능을 구현하였습니다.</strong><p>FlowGraph로 커스텀 노드를 만들어 저널의 진행 조건을 제어하고, 공유 저널은 GameState에서 전체 플레이어에게, 개인 저널은 PlayerState에서 소유 클라이언트에게 동기화되도록 처리했습니다. 저널 등록 상태를 클라이언트에 복제해 목록과 등록 연출에 반영하고, 기존 저장 시스템에 Flow의 SaveGame을 통합해 저널 상태와 진행 흐름을 저장·복원하도록 구현했습니다.</p></div><a class="case-link" href="#guide-journal">저널 기능 ↗</a></article>
+                        <article><h3>게임 플로우 / UI</h3><div><strong>타이틀·로딩·인게임·종료를 하나의 화면 관리 구조로 구현하였습니다.</strong><p>데이터 기반 UI 매니저로 화면 계층·입력 포커스·위젯 재사용을 관리하고, Slate와 MoviePlayer로 로딩 연출을 구현했습니다.</p></div><a class="case-link" href="#ui-manager">게임 플로우 / UI ↗</a></article>
                         <article><h3>에디터 데이터 도구</h3><div><strong>반복적인 테이블 가공을 에디터 안에서 처리할 수 있게 했습니다.</strong><p>Editor Utility Widget으로 필요한 열을 다른 테이블로 복사·저장하고, 외부 CSV·JSON 입출력의 반복을 줄였습니다.</p></div><a class="case-link" href="#editor-tools">에디터 툴 ↗</a></article>
                         <article><h3>현지화 플러그인</h3><div><strong>기존 플러그인을 유지보수하고, 텍스트 식별자의 중복을 방지했습니다.</strong><p>텍스트 파일을 JSON으로 직렬화해 Wordbee 서버와 연결하고, 프로젝트에 맞춘 키 발급 로직을 적용했습니다.</p></div><a class="case-link" href="#localization">현지화 유지보수 ↗</a></article>
                         <article><h3>그 외 구현 / 버그 수정</h3><div><strong>콘텐츠 기능 구현과 기존 기능의 버그 수정을 담당했습니다.</strong><p>게임플레이·상호작용 기능을 추가·확장하고, 멀티플레이 환경의 오류를 수정했습니다.</p></div><a class="case-link" href="#additional-work">구현·버그 수정 ↗</a></article>
@@ -155,6 +155,8 @@
                             <p>게임플레이에 등록 사실을 알리는 이벤트와 UI 갱신 이벤트의 역할을 구분했습니다. 같은 프레임에 등록된 항목은 묶어 연출 큐에 전달하고, 진행 중인 연출이 끝난 뒤 다음 묶음을 순서대로 표시하도록 했습니다. 기존 목록을 다시 반영할 때는 신규 등록 연출과 별도 경로로 처리했습니다.</p>
                             <h4>카테고리·선택·읽음 상태의 UI 반영</h4>
                             <p>UI 전용 데이터와 ViewModel로 카테고리별 목록을 구성하고, 최신 등록 순서와 선택 항목, 읽지 않은 항목 표시를 관리했습니다. MVVM으로 상태 변화를 위젯에 전달하고, 카테고리 전환 시 선택·스크롤을 정리하며 화면 생성·제거 주기에 맞춰 이벤트 연결을 관리했습니다.</p>
+                            <h4>저널 상태와 진행 흐름의 세이브·로드</h4>
+                            <p>기존 저장 시스템에 Flow의 SaveGame을 통합해 저널 등록 상태와 진행 흐름을 함께 저장·복원하도록 구현했습니다.</p>
                             <a class="text-link" href="#journal-features">저널 기능 구현 상세 보기 →</a>
                         </div>
                     </details>
